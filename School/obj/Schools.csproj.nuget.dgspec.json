@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj",
+        "projectName": "Schools",
+        "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj",
+        "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj": {
+                "projectPath": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj",
+        "projectName": "School_BisunissLayer",
+        "projectPath": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\School_DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\School_DataLayer.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\School_DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\School_DataLayer.csproj",
+        "projectName": "School_DataLayer",
+        "projectPath": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\School_DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
