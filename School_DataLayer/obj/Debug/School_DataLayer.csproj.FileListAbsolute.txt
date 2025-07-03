@@ -1,0 +1,16 @@
+C:\Users\Hamssa\Desktop\School_DataLayer\obj\Debug\School_DataLayer.csproj.AssemblyReference.cache
+C:\Users\Hamssa\Desktop\School_DataLayer\obj\Debug\School_DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hamssa\Desktop\School_DataLayer\bin\Debug\School_DataLayer.dll
+C:\Users\Hamssa\Desktop\School_DataLayer\bin\Debug\School_DataLayer.pdb
+C:\Users\Hamssa\Desktop\School_DataLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hamssa\Desktop\School_DataLayer\obj\Debug\School_D.668844CA.Up2Date
+C:\Users\Hamssa\Desktop\School_DataLayer\obj\Debug\School_DataLayer.dll
+C:\Users\Hamssa\Desktop\School_DataLayer\obj\Debug\School_DataLayer.pdb
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\bin\Debug\School_DataLayer.dll
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\bin\Debug\School_DataLayer.pdb
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\obj\Debug\School_DataLayer.csproj.AssemblyReference.cache
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\obj\Debug\School_DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\obj\Debug\School_D.668844CA.Up2Date
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\obj\Debug\School_DataLayer.dll
+C:\Users\Hamssa\Desktop\Schools\School_DataLayer\obj\Debug\School_DataLayer.pdb

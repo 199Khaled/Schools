@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97034DCB-4CC5-4D06-A8FC-6CC1AC78C60E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>School_DataLayer</RootNamespace>
+    <AssemblyName>School_DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsAttendance.cs" />
+    <Compile Include="clsClasses.cs" />
+    <Compile Include="clsClassrooms.cs" />
+    <Compile Include="clsClassSubjects.cs" />
+    <Compile Include="clsEmployees.cs" />
+    <Compile Include="clsEnrollments.cs" />
+    <Compile Include="clsExams.cs" />
+    <Compile Include="clsGrades.cs" />
+    <Compile Include="clsPayments.cs" />
+    <Compile Include="clsPersons.cs" />
+    <Compile Include="clsSchedules.cs" />
+    <Compile Include="clsStudentExamResults.cs" />
+    <Compile Include="clsStudents.cs" />
+    <Compile Include="clsSubjects.cs" />
+    <Compile Include="clsTeacherSubjects.cs" />
+    <Compile Include="ConnectionString\clsDataAccessSettings.cs" />
+    <Compile Include="ErrorHandler\clsErrorHandlingManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SPTables\Attendance_SPs.sql" />
+    <Content Include="SPTables\Classes_SPs.sql" />
+    <Content Include="SPTables\Classrooms_SPs.sql" />
+    <Content Include="SPTables\ClassSubjects_SPs.sql" />
+    <Content Include="SPTables\Employees_SPs.sql" />
+    <Content Include="SPTables\Enrollments_SPs.sql" />
+    <Content Include="SPTables\Exams_SPs.sql" />
+    <Content Include="SPTables\Grades_SPs.sql" />
+    <Content Include="SPTables\Payments_SPs.sql" />
+    <Content Include="SPTables\Persons_SPs.sql" />
+    <Content Include="SPTables\Schedules_SPs.sql" />
+    <Content Include="SPTables\StudentExamResults_SPs.sql" />
+    <Content Include="SPTables\Students_SPs.sql" />
+    <Content Include="SPTables\Subjects_SPs.sql" />
+    <Content Include="SPTables\TeacherSubjects_SPs.sql" />
+    <Content Include="SPTables\Teachers_SPs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ErrorHandler\JsonFile\ErrorHandling_JsonFile.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

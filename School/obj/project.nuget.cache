@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6zPoH19aL1Y=",
+  "dgSpecHash": "bnDg2Xr/9SU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj",
+  "projectFilePath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hamssa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],

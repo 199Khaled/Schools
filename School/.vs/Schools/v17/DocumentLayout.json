@@ -1,38 +1,43 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\",
+  "WorkspaceRootPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97034DCB-4CC5-4D06-A8FC-6CC1AC78C60E}|..\\School_DataLayer\\School_DataLayer.csproj|c:\\users\\hamssa\\desktop\\school_datalayer\\clspersons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hamssa\\Desktop\\Meldungen\\error.txtErrorHandling_JsonFile.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD41F216-5695-4367-A471-6657B8BE56BD}|..\\School_BisunissLayer\\School_BisunissLayer.csproj|c:\\users\\hamssa\\desktop\\school_bisunisslayer\\clsteachers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmaddupdateteachersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmaddupdateteachersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\hamssa\\desktop\\schools\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{97034DCB-4CC5-4D06-A8FC-6CC1AC78C60E}|..\\School_DataLayer\\School_DataLayer.csproj|c:\\users\\hamssa\\desktop\\schools\\school_datalayer\\clsteachersubjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\hamssa\\desktop\\schools\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97034DCB-4CC5-4D06-A8FC-6CC1AC78C60E}|..\\School_DataLayer\\School_DataLayer.csproj|c:\\users\\hamssa\\desktop\\schools\\school_datalayer\\clsemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD41F216-5695-4367-A471-6657B8BE56BD}|..\\School_BisunissLayer\\School_BisunissLayer.csproj|c:\\users\\hamssa\\desktop\\school_bisunisslayer\\clsstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97034DCB-4CC5-4D06-A8FC-6CC1AC78C60E}|..\\School_DataLayer\\School_DataLayer.csproj|c:\\users\\hamssa\\desktop\\school_datalayer\\clsstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmaddupdateteachersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmaddupdateteachersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\hamssa\\desktop\\schools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\School\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Hamssa\\Desktop\\Schools\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,122 +47,125 @@
       "DocumentGroups": [
         {
           "DockedHeight": 107,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "clsTeachers.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\clsTeachers.cs",
-              "RelativeDocumentMoniker": "..\\School_BisunissLayer\\clsTeachers.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\clsTeachers.cs",
-              "RelativeToolTip": "..\\School_BisunissLayer\\clsTeachers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T11:42:54.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "clsStudents.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\clsStudents.cs",
-              "RelativeDocumentMoniker": "..\\School_DataLayer\\clsStudents.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\clsStudents.cs",
-              "RelativeToolTip": "..\\School_DataLayer\\clsStudents.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAADwv8kAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:30:13.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "clsPersons.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\clsPersons.cs",
-              "RelativeDocumentMoniker": "..\\School_DataLayer\\clsPersons.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\School_DataLayer\\clsPersons.cs",
-              "RelativeToolTip": "..\\School_DataLayer\\clsPersons.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAswNgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:29:57.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "clsStudents.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\clsStudents.cs",
-              "RelativeDocumentMoniker": "..\\School_BisunissLayer\\clsStudents.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\clsStudents.cs",
-              "RelativeToolTip": "..\\School_BisunissLayer\\clsStudents.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAUwIYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:19:50.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmStudentsForm.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmStudentsForm.cs",
-              "RelativeDocumentMoniker": "frmStudentsForm.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmStudentsForm.cs",
-              "RelativeToolTip": "frmStudentsForm.cs",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAewAEBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:08:23.802Z",
+              "Title": "error.txtErrorHandling_JsonFile.json",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Meldungen\\error.txtErrorHandling_JsonFile.json",
+              "RelativeDocumentMoniker": "..\\..\\Meldungen\\error.txtErrorHandling_JsonFile.json",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Meldungen\\error.txtErrorHandling_JsonFile.json",
+              "RelativeToolTip": "..\\..\\Meldungen\\error.txtErrorHandling_JsonFile.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-18T16:24:19.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmStudentsForm.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmStudentsForm.cs",
-              "RelativeDocumentMoniker": "frmStudentsForm.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmStudentsForm.cs [Entwurf]",
-              "RelativeToolTip": "frmStudentsForm.cs [Entwurf]",
+              "Title": "clsTeacherSubjects.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\clsTeacherSubjects.cs",
+              "RelativeDocumentMoniker": "..\\School_DataLayer\\clsTeacherSubjects.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\clsTeacherSubjects.cs",
+              "RelativeToolTip": "..\\School_DataLayer\\clsTeacherSubjects.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAiwIcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:08:21.603Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-03-16T15:35:44.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBMAAAAzAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmAddUpdateTeacherSubject.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmAddUpdateTeacherSubject.cs",
+              "RelativeDocumentMoniker": "frmAddUpdateTeacherSubject.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmAddUpdateTeacherSubject.cs",
+              "RelativeToolTip": "frmAddUpdateTeacherSubject.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAADwv00AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T22:38:43.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T15:05:02.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsEmployees.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\clsEmployees.cs",
+              "RelativeDocumentMoniker": "..\\School_DataLayer\\clsEmployees.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\clsEmployees.cs",
+              "RelativeToolTip": "..\\School_DataLayer\\clsEmployees.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAUwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T23:37:02.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmTeacherForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmTeacherForm.cs",
+              "RelativeDocumentMoniker": "frmTeacherForm.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmTeacherForm.cs [Entwurf]",
+              "RelativeToolTip": "frmTeacherForm.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T22:40:06.956Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "frmAddUpdatePerson.cs",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmAddUpdatePerson.cs",
-              "RelativeToolTip": "frmAddUpdatePerson.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAiwIMAAAAMAAAAAAAAAA==",
+              "Title": "frmStudentsForm.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmStudentsForm.cs",
+              "RelativeDocumentMoniker": "frmStudentsForm.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmStudentsForm.cs [Entwurf]",
+              "RelativeToolTip": "frmStudentsForm.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T10:57:23.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T16:08:21.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T22:38:43.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmStudentsForm.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmStudentsForm.cs",
+              "RelativeDocumentMoniker": "frmStudentsForm.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmStudentsForm.cs",
+              "RelativeToolTip": "frmStudentsForm.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwHsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T16:08:23.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmTeacherForm.cs",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmTeacherForm.cs",
+              "RelativeDocumentMoniker": "frmTeacherForm.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmTeacherForm.cs",
+              "RelativeToolTip": "frmTeacherForm.cs",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAIwCEBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T15:04:49.863Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "frmAddUpdatePerson.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\frmAddUpdatePerson.cs [Entwurf]",
-              "RelativeToolTip": "frmAddUpdatePerson.cs [Entwurf]",
+              "Title": "frmAddUpdateTeacherSubject.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmAddUpdateTeacherSubject.cs",
+              "RelativeDocumentMoniker": "frmAddUpdateTeacherSubject.cs",
+              "ToolTip": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\frmAddUpdateTeacherSubject.cs [Entwurf]",
+              "RelativeToolTip": "frmAddUpdateTeacherSubject.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T14:16:47.629Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-03-16T13:08:51.091Z"
             }
           ]
         }

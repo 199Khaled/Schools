@@ -15,20 +15,6 @@ namespace Schools
 {
     public partial class frmStudentsForm: Form
     {
-        public enum enPersonType
-        {
-            ITAdministrator,
-            SchoolAssistantOrTeachingAssistant,
-            SupportStaffOrSupervisoryStaff,
-            Librarian,
-            SchoolSocialWorker,
-            CaretakerOrJanitor,
-            Secretary,
-            Student,
-            Principal,
-            Teacher
-        }
-        enPersonType _personTyp;
         public enum enMode { AddNew = 1, Update = 2 };
         enMode _Mode;
 
@@ -150,8 +136,6 @@ namespace Schools
             //in case Update Mode 
             if (_Mode == enMode.Update)
             {
-                MessageBox.Show("Student updated successfully.", "Success",
-                              MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _LoadAllStudentFromDatabase();
                 _ResetDefaultValue();
                 return;
@@ -166,8 +150,6 @@ namespace Schools
             }
 
             //in case everthing is good
-            MessageBox.Show($"Student added successfully with ID [ {studentID} ].", "Success",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
             _Mode = enMode.Update;
             _LoadAllStudentFromDatabase();
             _ResetDefaultValue();

@@ -51,11 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddUpdatePerson.cs">
+    <Compile Include="frmAddUpdateTeacherSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddUpdatePerson.Designer.cs">
-      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    <Compile Include="frmAddUpdateTeacherSubject.Designer.cs">
+      <DependentUpon>frmAddUpdateTeacherSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStudentsForm.cs">
       <SubType>Form</SubType>
@@ -63,13 +63,22 @@
     <Compile Include="frmStudentsForm.Designer.cs">
       <DependentUpon>frmStudentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherForm.Designer.cs">
+      <DependentUpon>frmTeacherForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAddUpdatePerson.resx">
-      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddUpdateTeacherSubject.resx">
+      <DependentUpon>frmAddUpdateTeacherSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentsForm.resx">
       <DependentUpon>frmStudentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherForm.resx">
+      <DependentUpon>frmTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,18 +104,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\School_BisunissLayer\School_BisunissLayer.csproj">
-      <Project>{cd41f216-5695-4367-a471-6657b8be56bd}</Project>
-      <Name>School_BisunissLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Student.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\School_BisunissLayer\School_BisunissLayer.csproj">
+      <Project>{cd41f216-5695-4367-a471-6657b8be56bd}</Project>
+      <Name>School_BisunissLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teacher.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subjects.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TeacherSubject.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

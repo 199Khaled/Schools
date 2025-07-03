@@ -257,11 +257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj",
+      "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
       "projectName": "Schools",
-      "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\Schools.csproj",
+      "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
       "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\obj\\",
+      "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "UsingMicrosoftNETSdk": false,
@@ -283,8 +283,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj": {
-              "projectPath": "C:\\Users\\Hamssa\\Desktop\\School_BisunissLayer\\School_BisunissLayer.csproj"
+            "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
+              "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj"
             }
           }
         }
