@@ -1,0 +1,426 @@
+﻿namespace Schools
+{
+    partial class frmEnrollmentsFormcs
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbFilterby = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgvTeacherSubject = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtStudentID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbClasses = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtVollname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpDateOfEnrollment = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherSubject)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txtFilterValue
+            // 
+            this.txtFilterValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterValue.DefaultText = "";
+            this.txtFilterValue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterValue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterValue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterValue.DisabledState.Parent = this.txtFilterValue;
+            this.txtFilterValue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterValue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterValue.FocusedState.Parent = this.txtFilterValue;
+            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilterValue.ForeColor = System.Drawing.Color.Black;
+            this.txtFilterValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterValue.HoverState.Parent = this.txtFilterValue;
+            this.txtFilterValue.Location = new System.Drawing.Point(319, 448);
+            this.txtFilterValue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFilterValue.Name = "txtFilterValue";
+            this.txtFilterValue.PasswordChar = '\0';
+            this.txtFilterValue.PlaceholderText = "";
+            this.txtFilterValue.SelectedText = "";
+            this.txtFilterValue.ShadowDecoration.Parent = this.txtFilterValue;
+            this.txtFilterValue.Size = new System.Drawing.Size(522, 38);
+            this.txtFilterValue.TabIndex = 55;
+            // 
+            // cbFilterby
+            // 
+            this.cbFilterby.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilterby.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFilterby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilterby.FocusedColor = System.Drawing.Color.Empty;
+            this.cbFilterby.FocusedState.Parent = this.cbFilterby;
+            this.cbFilterby.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilterby.ForeColor = System.Drawing.Color.Black;
+            this.cbFilterby.FormattingEnabled = true;
+            this.cbFilterby.HoverState.Parent = this.cbFilterby;
+            this.cbFilterby.ItemHeight = 30;
+            this.cbFilterby.Items.AddRange(new object[] {
+            "TeacherID",
+            "SubjectID"});
+            this.cbFilterby.ItemsAppearance.Parent = this.cbFilterby;
+            this.cbFilterby.Location = new System.Drawing.Point(118, 448);
+            this.cbFilterby.Name = "cbFilterby";
+            this.cbFilterby.ShadowDecoration.Parent = this.cbFilterby;
+            this.cbFilterby.Size = new System.Drawing.Size(191, 36);
+            this.cbFilterby.TabIndex = 54;
+            // 
+            // dgvTeacherSubject
+            // 
+            this.dgvTeacherSubject.AllowUserToAddRows = false;
+            this.dgvTeacherSubject.AllowUserToDeleteRows = false;
+            this.dgvTeacherSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeacherSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTeacherSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeacherSubject.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvTeacherSubject.EnableHeadersVisualStyles = false;
+            this.dgvTeacherSubject.Location = new System.Drawing.Point(18, 494);
+            this.dgvTeacherSubject.MultiSelect = false;
+            this.dgvTeacherSubject.Name = "dgvTeacherSubject";
+            this.dgvTeacherSubject.ReadOnly = true;
+            this.dgvTeacherSubject.RowTemplate.Height = 25;
+            this.dgvTeacherSubject.Size = new System.Drawing.Size(975, 244);
+            this.dgvTeacherSubject.TabIndex = 56;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Location = new System.Drawing.Point(12, 402);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(975, 22);
+            this.panel1.TabIndex = 53;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtpDateOfEnrollment);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtStudentID);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cbClasses);
+            this.groupBox1.Controls.Add(this.txtVollname);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 93);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(975, 299);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Student Enrollments Information";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(399, 232);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(121, 46);
+            this.btnDelete.TabIndex = 39;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(301, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(89, 41);
+            this.btnSearch.TabIndex = 38;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(68, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "StudentID:";
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentID.DefaultText = "";
+            this.txtStudentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStudentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStudentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentID.DisabledState.Parent = this.txtStudentID;
+            this.txtStudentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStudentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentID.FocusedState.Parent = this.txtStudentID;
+            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentID.ForeColor = System.Drawing.Color.Black;
+            this.txtStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStudentID.HoverState.Parent = this.txtStudentID;
+            this.txtStudentID.Location = new System.Drawing.Point(163, 29);
+            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.PasswordChar = '\0';
+            this.txtStudentID.PlaceholderText = "";
+            this.txtStudentID.SelectedText = "";
+            this.txtStudentID.ShadowDecoration.Parent = this.txtStudentID;
+            this.txtStudentID.Size = new System.Drawing.Size(131, 38);
+            this.txtStudentID.TabIndex = 36;
+            this.txtStudentID.TextChanged += new System.EventHandler(this.txtStudentID_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(85, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 20);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Classes:";
+            // 
+            // cbClasses
+            // 
+            this.cbClasses.BackColor = System.Drawing.Color.Transparent;
+            this.cbClasses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbClasses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClasses.FocusedColor = System.Drawing.Color.Empty;
+            this.cbClasses.FocusedState.Parent = this.cbClasses;
+            this.cbClasses.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClasses.ForeColor = System.Drawing.Color.Black;
+            this.cbClasses.FormattingEnabled = true;
+            this.cbClasses.HoverState.Parent = this.cbClasses;
+            this.cbClasses.ItemHeight = 30;
+            this.cbClasses.ItemsAppearance.Parent = this.cbClasses;
+            this.cbClasses.Location = new System.Drawing.Point(163, 123);
+            this.cbClasses.Name = "cbClasses";
+            this.cbClasses.ShadowDecoration.Parent = this.cbClasses;
+            this.cbClasses.Size = new System.Drawing.Size(328, 36);
+            this.cbClasses.TabIndex = 34;
+            // 
+            // txtVollname
+            // 
+            this.txtVollname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtVollname.DefaultText = "";
+            this.txtVollname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtVollname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtVollname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVollname.DisabledState.Parent = this.txtVollname;
+            this.txtVollname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtVollname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVollname.FocusedState.Parent = this.txtVollname;
+            this.txtVollname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVollname.ForeColor = System.Drawing.Color.Black;
+            this.txtVollname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtVollname.HoverState.Parent = this.txtVollname;
+            this.txtVollname.Location = new System.Drawing.Point(163, 75);
+            this.txtVollname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtVollname.Name = "txtVollname";
+            this.txtVollname.PasswordChar = '\0';
+            this.txtVollname.PlaceholderText = "";
+            this.txtVollname.SelectedText = "";
+            this.txtVollname.ShadowDecoration.Parent = this.txtVollname;
+            this.txtVollname.Size = new System.Drawing.Size(328, 38);
+            this.txtVollname.TabIndex = 0;
+            this.txtVollname.TextChanged += new System.EventHandler(this.txtVollname_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Image = global::Schools.Properties.Resources.TeacherSubject;
+            this.pictureBox1.Location = new System.Drawing.Point(671, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(285, 280);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnAdd.Location = new System.Drawing.Point(154, 232);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(121, 46);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Save";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Student Vollname:";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(275, 232);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(121, 46);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1052, 62);
+            this.panel2.TabIndex = 51;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(381, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 25);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Enrollments";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Enrollment Date:";
+            // 
+            // dtpDateOfEnrollment
+            // 
+            this.dtpDateOfEnrollment.CheckedState.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.FillColor = System.Drawing.Color.White;
+            this.dtpDateOfEnrollment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOfEnrollment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfEnrollment.HoverState.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.Location = new System.Drawing.Point(163, 175);
+            this.dtpDateOfEnrollment.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDateOfEnrollment.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDateOfEnrollment.Name = "dtpDateOfEnrollment";
+            this.dtpDateOfEnrollment.ShadowDecoration.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.Size = new System.Drawing.Size(328, 36);
+            this.dtpDateOfEnrollment.TabIndex = 41;
+            this.dtpDateOfEnrollment.Value = new System.DateTime(2025, 7, 6, 0, 0, 0, 0);
+            // 
+            // frmEnrollmentsFormcs
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1052, 749);
+            this.Controls.Add(this.txtFilterValue);
+            this.Controls.Add(this.cbFilterby);
+            this.Controls.Add(this.dgvTeacherSubject);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel2);
+            this.Name = "frmEnrollmentsFormcs";
+            this.Text = "frmEnrollmentsFormcs";
+            this.Load += new System.EventHandler(this.frmEnrollmentsFormcs_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherSubject)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
+        private Guna.UI2.WinForms.Guna2ComboBox cbFilterby;
+        private System.Windows.Forms.DataGridView dgvTeacherSubject;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox txtStudentID;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2ComboBox cbClasses;
+        private Guna.UI2.WinForms.Guna2TextBox txtVollname;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateOfEnrollment;
+    }
+}

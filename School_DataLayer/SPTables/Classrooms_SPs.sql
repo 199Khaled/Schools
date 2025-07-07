@@ -61,7 +61,8 @@ BEGIN
         INSERT INTO Classrooms ([ClassroomName],[Capacity],[Building])
         VALUES (    LTRIM(RTRIM(@ClassroomName)),
     LTRIM(RTRIM(@Capacity)),
-    LTRIM(RTRIM(@Building)));
+    LTRIM(RTRIM(@Building))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -78,13 +79,13 @@ CREATE OR ALTER PROCEDURE SP_Update_Classrooms_ByID
     @ClassroomID int,
     @ClassroomName varchar(50) = NULL,
     @Capacity int = NULL,
-    @Building varchar(50) = NULL
+    @Building varchar(50) = NULL
+
 )
 AS
 BEGIN
     BEGIN TRY
         -- Check if required parameters are NULL or contain only whitespace after trimming
-        IF 
         BEGIN
             RAISERROR('One or more required parameters are NULL or have only whitespace.', 16, 1);
             RETURN;
@@ -94,7 +95,8 @@ BEGIN
         UPDATE Classrooms
         SET     [ClassroomName] = LTRIM(RTRIM(@ClassroomName)),
     [Capacity] = LTRIM(RTRIM(@Capacity)),
-    [Building] = LTRIM(RTRIM(@Building))
+    [Building] = LTRIM(RTRIM(@Building))
+
         WHERE ClassroomID = @ClassroomID;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

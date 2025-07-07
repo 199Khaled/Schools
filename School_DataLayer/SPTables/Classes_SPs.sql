@@ -59,7 +59,8 @@ BEGIN
         -- Insert the data into the table
         INSERT INTO Classes ([ClassName],[GradeLevel])
         VALUES (    LTRIM(RTRIM(@ClassName)),
-    LTRIM(RTRIM(@GradeLevel)));
+    LTRIM(RTRIM(@GradeLevel))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -75,7 +76,8 @@ CREATE OR ALTER PROCEDURE SP_Update_Classes_ByID
 (
     @ClassID int,
     @ClassName nvarchar(50),
-    @GradeLevel int
+    @GradeLevel int
+
 )
 AS
 BEGIN
@@ -90,7 +92,8 @@ BEGIN
         -- Update the record in the table
         UPDATE Classes
         SET     [ClassName] = LTRIM(RTRIM(@ClassName)),
-    [GradeLevel] = LTRIM(RTRIM(@GradeLevel))
+    [GradeLevel] = LTRIM(RTRIM(@GradeLevel))
+
         WHERE ClassID = @ClassID;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

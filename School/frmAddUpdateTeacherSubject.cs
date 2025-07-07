@@ -116,6 +116,8 @@ namespace Schools
         private void btnCancel_Click(object sender, EventArgs e)
         {
             _ResetDefaultValue();
+
+         
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -156,6 +158,9 @@ namespace Schools
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtTeacherID.Text))
+                return;
+
             int TeacherID = Convert.ToInt32(txtTeacherID.Text);
             _employee = clsEmployees.FindByEmployeeID(TeacherID);
 
@@ -179,6 +184,82 @@ namespace Schools
         {
             if (string.IsNullOrEmpty(txtVollname.Text))
                 txtTeacherID.Clear();
+        }
+
+        private void cbFilterby_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbFilterby.SelectedIndex != -1)
+            {
+                txtFilterValue.Clear();
+                txtFilterValue.Focus();
+            }
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+            string filterValue = txtFilterValue.Text.Trim();
+            string filterColumn = cbFilterby.Text.Trim();
+
+            if (!string.IsNullOrEmpty(filterValue))
+            {
+                if ((filterColumn == "TeacherID" || filterColumn == "SubjectID") && _IsNumber(filterValue))
+                    _bindingSource.Filter = $"{filterColumn} = {filterValue}";
+                
+            }
+            else
+                _bindingSource.Filter = string.Empty;
+        }
+        private bool _IsNumber(string eingabe)
+        {
+            if (int.TryParse(eingabe, out _))
+                return true;
+            else
+                return false;
+        }
+
+        private void dgvTeacherSubject_DoubleClick(object sender, EventArgs e)
+        {
+            _ResetDefaultValue();
+            _Mode = enMode.Update;
+
+            int TeacherSujectID = (int)dgvTeacherSubject.CurrentRow.Cells[0].Value;
+            clsTeacherSubjects TeacherSubjects = clsTeacherSubjects.FindByTeacherSubjectID(TeacherSujectID);
+
+            _LoadData(TeacherSubjects);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTeacherID.Text) && string.IsNullOrEmpty(txtVollname.Text)  )
+            {
+                MessageBox.Show("Please select a valid row before proceeding.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //wa make it sure, that the user will do the Transaction.
+            bool warningMessage = MessageBox.Show("Are you sure, you want to delete Data of this Teacher?", "Warning",
+                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
+
+            //if No, we go back from the methode
+            if (!warningMessage)
+                return;
+
+            int TeacherSubjectID = (int)dgvTeacherSubject.CurrentRow.Cells[0].Value;
+            clsTeacherSubjects TeacherSubject = clsTeacherSubjects.FindByTeacherSubjectID(TeacherSubjectID);
+            if (TeacherSubject == null)
+            {
+                MessageBox.Show("No TeacherSubject found for the selected data.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (warningMessage && clsTeacherSubjects.DeleteTeacherSubjects(TeacherSubjectID))
+            {
+                _ResetDefaultValue();
+                _LoadTeacherSubjectDataFromDatabase();
+            }
+            else
+            {
+                MessageBox.Show("An error occurred while deleting the TeacherSubject. Please try again.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

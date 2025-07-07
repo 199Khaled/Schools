@@ -278,5 +278,10 @@ namespace Schools
             frmAddUpdateSubjects frm = new frmAddUpdateSubjects();
             frm.Show();
         }
+
+        private void dgvTeachers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

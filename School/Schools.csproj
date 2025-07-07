@@ -57,6 +57,12 @@
     <Compile Include="frmAddUpdateTeacherSubject.Designer.cs">
       <DependentUpon>frmAddUpdateTeacherSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnrollmentsFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnrollmentsFormcs.Designer.cs">
+      <DependentUpon>frmEnrollmentsFormcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddUpdateTeacherSubject.resx">
       <DependentUpon>frmAddUpdateTeacherSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnrollmentsFormcs.resx">
+      <DependentUpon>frmEnrollmentsFormcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentsForm.resx">
       <DependentUpon>frmStudentsForm.cs</DependentUpon>

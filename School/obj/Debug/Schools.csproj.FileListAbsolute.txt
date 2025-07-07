@@ -34,3 +34,4 @@ C:\Users\Hamssa\Desktop\Schools\School\bin\Debug\School_DataLayer.pdb
 C:\Users\Hamssa\Desktop\Schools\School\obj\Debug\Schools.csproj.Up2Date
 C:\Users\Hamssa\Desktop\Schools\School\obj\Debug\Schools.frmTeacherForm.resources
 C:\Users\Hamssa\Desktop\Schools\School\obj\Debug\Schools.frmAddUpdateSubjects.resources
+C:\Users\Hamssa\Desktop\Schools\School\obj\Debug\Schools.frmEnrollmentsFormcs.resources

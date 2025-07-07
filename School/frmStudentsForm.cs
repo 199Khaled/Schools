@@ -51,9 +51,10 @@ namespace Schools
 
             txtFirstname.Clear();
             txtLastname.Clear();
-            cbGender.SelectedIndex = 0;
+            cbGender.SelectedIndex = -1;
             txtEmail.Clear();
             txtPhone.Clear();
+            cbCity.SelectedIndex = -1;
             dtpDateOfBirth.Value = DateTime.Now;
         }
 
@@ -176,7 +177,7 @@ namespace Schools
             // 4. Optional: Standardauswahl festlegen
             if (cbCity.Items.Count > 0)
             {
-                cbCity.SelectedIndex = 0; // Wählt die erste Stadt in der Liste aus
+                cbCity.SelectedIndex = -1; // Wählt die erste Stadt in der Liste aus
             }
         }
 

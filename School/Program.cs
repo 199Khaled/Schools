@@ -18,8 +18,9 @@ namespace Schools
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new frmAddUpdatePerson(null,frmAddUpdatePerson.enMode.AddNew, frmAddUpdatePerson.enPersonType.Principal));
             // Application.Run(new frmStudentsForm());
-            Application.Run(new frmTeacherForm());
+            //Application.Run(new frmTeacherForm());
             //Application.Run(new frmAddUpdateSubjects());
+            Application.Run(new frmEnrollmentsFormcs());
         }
     }
 }
