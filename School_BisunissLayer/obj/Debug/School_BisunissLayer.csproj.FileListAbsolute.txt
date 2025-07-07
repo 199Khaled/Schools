@@ -18,3 +18,13 @@ C:\Users\Hamssa\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLa
 C:\Users\Hamssa\Desktop\Schools\School_BisunissLayer\obj\Debug\School_B.FDF59921.Up2Date
 C:\Users\Hamssa\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.dll
 C:\Users\Hamssa\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.pdb
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\bin\Debug\School_BisunissLayer.dll
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\bin\Debug\School_BisunissLayer.pdb
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\bin\Debug\School_DataLayer.dll
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\bin\Debug\School_DataLayer.pdb
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.csproj.AssemblyReference.cache
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.csproj.CoreCompileInputs.cache
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\obj\Debug\School_B.FDF59921.Up2Date
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.dll
+C:\Users\Khaled\Desktop\Schools\School_BisunissLayer\obj\Debug\School_BisunissLayer.pdb

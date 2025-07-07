@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtFilterValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbFilterby = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dgvTeacherSubject = new System.Windows.Forms.DataGridView();
+            this.dgvEnrollments = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpDateOfEnrollment = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,12 +51,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpDateOfEnrollment = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherSubject)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFilterValue
@@ -103,36 +106,36 @@
             this.cbFilterby.Size = new System.Drawing.Size(191, 36);
             this.cbFilterby.TabIndex = 54;
             // 
-            // dgvTeacherSubject
+            // dgvEnrollments
             // 
-            this.dgvTeacherSubject.AllowUserToAddRows = false;
-            this.dgvTeacherSubject.AllowUserToDeleteRows = false;
-            this.dgvTeacherSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeacherSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvTeacherSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeacherSubject.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvTeacherSubject.EnableHeadersVisualStyles = false;
-            this.dgvTeacherSubject.Location = new System.Drawing.Point(18, 494);
-            this.dgvTeacherSubject.MultiSelect = false;
-            this.dgvTeacherSubject.Name = "dgvTeacherSubject";
-            this.dgvTeacherSubject.ReadOnly = true;
-            this.dgvTeacherSubject.RowTemplate.Height = 25;
-            this.dgvTeacherSubject.Size = new System.Drawing.Size(975, 244);
-            this.dgvTeacherSubject.TabIndex = 56;
+            this.dgvEnrollments.AllowUserToAddRows = false;
+            this.dgvEnrollments.AllowUserToDeleteRows = false;
+            this.dgvEnrollments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEnrollments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEnrollments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEnrollments.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEnrollments.EnableHeadersVisualStyles = false;
+            this.dgvEnrollments.Location = new System.Drawing.Point(18, 494);
+            this.dgvEnrollments.MultiSelect = false;
+            this.dgvEnrollments.Name = "dgvEnrollments";
+            this.dgvEnrollments.ReadOnly = true;
+            this.dgvEnrollments.RowTemplate.Height = 25;
+            this.dgvEnrollments.Size = new System.Drawing.Size(975, 244);
+            this.dgvEnrollments.TabIndex = 56;
             // 
             // panel1
             // 
@@ -166,6 +169,32 @@
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Enrollments Information";
+            // 
+            // dtpDateOfEnrollment
+            // 
+            this.dtpDateOfEnrollment.CheckedState.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.FillColor = System.Drawing.Color.White;
+            this.dtpDateOfEnrollment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOfEnrollment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfEnrollment.HoverState.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.Location = new System.Drawing.Point(163, 175);
+            this.dtpDateOfEnrollment.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDateOfEnrollment.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDateOfEnrollment.Name = "dtpDateOfEnrollment";
+            this.dtpDateOfEnrollment.ShadowDecoration.Parent = this.dtpDateOfEnrollment;
+            this.dtpDateOfEnrollment.Size = new System.Drawing.Size(328, 36);
+            this.dtpDateOfEnrollment.TabIndex = 41;
+            this.dtpDateOfEnrollment.Value = new System.DateTime(2025, 7, 7, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Enrollment Date:";
             // 
             // btnDelete
             // 
@@ -305,6 +334,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Save";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -327,6 +357,7 @@
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel2
             // 
@@ -350,31 +381,9 @@
             this.label9.Text = "Enrollments";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // errorProvider1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Enrollment Date:";
-            // 
-            // dtpDateOfEnrollment
-            // 
-            this.dtpDateOfEnrollment.CheckedState.Parent = this.dtpDateOfEnrollment;
-            this.dtpDateOfEnrollment.FillColor = System.Drawing.Color.White;
-            this.dtpDateOfEnrollment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateOfEnrollment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfEnrollment.HoverState.Parent = this.dtpDateOfEnrollment;
-            this.dtpDateOfEnrollment.Location = new System.Drawing.Point(163, 175);
-            this.dtpDateOfEnrollment.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpDateOfEnrollment.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpDateOfEnrollment.Name = "dtpDateOfEnrollment";
-            this.dtpDateOfEnrollment.ShadowDecoration.Parent = this.dtpDateOfEnrollment;
-            this.dtpDateOfEnrollment.Size = new System.Drawing.Size(328, 36);
-            this.dtpDateOfEnrollment.TabIndex = 41;
-            this.dtpDateOfEnrollment.Value = new System.DateTime(2025, 7, 6, 0, 0, 0, 0);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEnrollmentsFormcs
             // 
@@ -383,19 +392,20 @@
             this.ClientSize = new System.Drawing.Size(1052, 749);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.cbFilterby);
-            this.Controls.Add(this.dgvTeacherSubject);
+            this.Controls.Add(this.dgvEnrollments);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Name = "frmEnrollmentsFormcs";
             this.Text = "frmEnrollmentsFormcs";
             this.Load += new System.EventHandler(this.frmEnrollmentsFormcs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeacherSubject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,7 +414,7 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtFilterValue;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilterby;
-        private System.Windows.Forms.DataGridView dgvTeacherSubject;
+        private System.Windows.Forms.DataGridView dgvEnrollments;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDelete;
@@ -422,5 +432,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateOfEnrollment;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -14,11 +14,11 @@ namespace SchoolsDb_DataLayer
         //#nullable enable
 
         public static bool GetClassesInfoByID(int? ClassID , ref string ClassName, ref int? GradeLevel)
-{
+       {
     bool isFound = false;
 
-    try
-    {
+       try
+       {
         using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
         {
             string query = "SP_Get_Classes_ByID";
@@ -54,7 +54,45 @@ namespace SchoolsDb_DataLayer
 
     return isFound;
 }
+        public static bool GetClassesInfoByClassName(ref int? ClassID, string ClassName, ref int? GradeLevel)
+        {
+            bool isFound = false;
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Select * From Classes Where ClassName = @ClassName";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@ClassName", ClassName ?? (object)DBNull.Value);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                ClassID = (int)reader["ClassID"];
+                                GradeLevel = (int)reader["GradeLevel"];
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetClassesInfoByClassName), $"Parameter: ClassName= " + ClassName);
+            }
+
+            return isFound;
+        }
         public static DataTable GetAllClasses()
 {
     DataTable dt = new DataTable();

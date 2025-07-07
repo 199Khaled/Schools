@@ -87,8 +87,25 @@ ClassID, ClassName, GradeLevel);
                 return null;
             }
 
+        public static clsClasses FindByClassName(string ClassName)
 
-       public static DataTable GetAllClasses()
+        {
+            if (string.IsNullOrEmpty(ClassName))
+            {
+                return null;
+            }
+            int? ClassID= 0;
+            int? GradeLevel = 0;
+            bool IsFound = clsClassesData.GetClassesInfoByClassName(ref ClassID,
+                  ClassName, ref GradeLevel);
+
+            if (IsFound)
+                return new clsClasses(
+ ClassID, ClassName, GradeLevel);
+            else
+                return null;
+        }
+        public static DataTable GetAllClasses()
        {
 
         return clsClassesData.GetAllClasses();

@@ -75,21 +75,21 @@ public class JsonErrorLogger : IErrorSubscriber
         */
 
         // Enter the path where you want to save the JSON file
-        string userProvidedPath = "C:\\Users\\Hamssa\\Desktop\\Meldungen\\error.txt"; // Replace with the actual path
-
+        //string userProvidedPath = "C:\\Users\\Hamssa\\Desktop\\Meldungen\\error.txt"; // Replace with the actual path
+        string userProvidedPath1 = "C:\\Users\\Khaled\\Desktop\\Meldungen\\error.txt";
         // Append the file name to the path
-        userProvidedPath += "ErrorHandling_JsonFile.json";
+        userProvidedPath1 += "ErrorHandling_JsonFile.json";
 
         // Validate the path
-        if (string.IsNullOrWhiteSpace(userProvidedPath) || !Directory.Exists(Path.GetDirectoryName(userProvidedPath)))
+        if (string.IsNullOrWhiteSpace(userProvidedPath1) || !Directory.Exists(Path.GetDirectoryName(userProvidedPath1)))
         {
             throw new DirectoryNotFoundException("Invalid directory path provided.");
         }
 
         // Ensure the file exists or create an empty one
-        if (!File.Exists(userProvidedPath))
+        if (!File.Exists(userProvidedPath1))
         {
-            File.WriteAllText(userProvidedPath, "[]");
+            File.WriteAllText(userProvidedPath1, "[]");
         }
 
         // Define the method to save the new log
@@ -98,7 +98,7 @@ public class JsonErrorLogger : IErrorSubscriber
             try
             {
                 // Read the existing JSON content (if any)
-                var existingLogs = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(userProvidedPath)) ?? new List<Log>();
+                var existingLogs = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(userProvidedPath1)) ?? new List<Log>();
 
                 // Add the new log entry to the list
                 existingLogs.Add(log2);
@@ -107,7 +107,7 @@ public class JsonErrorLogger : IErrorSubscriber
                 string updatedJsonContent = JsonConvert.SerializeObject(existingLogs, Formatting.Indented);
 
                 // Write the updated JSON content to the file
-                File.WriteAllText(userProvidedPath, updatedJsonContent);
+                File.WriteAllText(userProvidedPath1, updatedJsonContent);
             }
             catch
             {

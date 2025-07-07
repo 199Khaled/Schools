@@ -61,7 +61,8 @@ BEGIN
         INSERT INTO Enrollments ([StudentID],[ClassID],[EnrollmentDate])
         VALUES (    LTRIM(RTRIM(@StudentID)),
     LTRIM(RTRIM(@ClassID)),
-    LTRIM(RTRIM(@EnrollmentDate)));
+    LTRIM(RTRIM(@EnrollmentDate))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -78,7 +79,8 @@ CREATE OR ALTER PROCEDURE SP_Update_Enrollments_ByID
     @EnrollmentID int,
     @StudentID int,
     @ClassID int,
-    @EnrollmentDate date
+    @EnrollmentDate date
+
 )
 AS
 BEGIN
@@ -94,7 +96,8 @@ BEGIN
         UPDATE Enrollments
         SET     [StudentID] = LTRIM(RTRIM(@StudentID)),
     [ClassID] = LTRIM(RTRIM(@ClassID)),
-    [EnrollmentDate] = LTRIM(RTRIM(@EnrollmentDate))
+    [EnrollmentDate] = LTRIM(RTRIM(@EnrollmentDate))
+
         WHERE EnrollmentID = @EnrollmentID;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

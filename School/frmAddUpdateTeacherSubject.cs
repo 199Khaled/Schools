@@ -115,9 +115,7 @@ namespace Schools
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            _ResetDefaultValue();
-
-         
+            _ResetDefaultValue();     
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

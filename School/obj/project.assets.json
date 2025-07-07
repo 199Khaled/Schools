@@ -251,25 +251,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hamssa\\.nuget\\packages\\": {},
+    "C:\\Users\\Khaled\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
+      "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
       "projectName": "Schools",
-      "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
-      "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\obj\\",
+      "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
+      "packagesPath": "C:\\Users\\Khaled\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -283,8 +282,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
-              "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj"
+            "C:\\Users\\Khaled\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
+              "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj"
             }
           }
         }
