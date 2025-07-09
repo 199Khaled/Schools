@@ -1,86 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj": {}
+    "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\Khaled\\Desktop\\Schools\\Datalayer\\Datalayer.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
-        "projectName": "Schools",
-        "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
-        "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\obj\\",
-        "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
-        "UsingMicrosoftNETSdk": false,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net472"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
+        "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Schools\\Datalayer\\Datalayer.csproj",
+        "projectName": "Datalayer",
+        "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\Datalayer\\Datalayer.csproj",
         "frameworks": {
           "net472": {
-            "projectReferences": {
-              "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
-                "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj"
-              }
-            }
+            "projectReferences": {}
           }
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net472": {
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
-        }
+        "net472": {}
       }
     },
-    "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
+    "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj",
-        "projectName": "School_BisunissLayer",
-        "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj",
-        "UsingMicrosoftNETSdk": false,
+        "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj",
+        "projectName": "Schools-Busineslayer",
+        "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\School_DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\School_DataLayer.csproj"
+              "C:\\Users\\Khaled\\Desktop\\Schools\\Datalayer\\Datalayer.csproj": {
+                "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\Datalayer\\Datalayer.csproj"
               }
             }
           }
@@ -90,22 +38,21 @@
         "net472": {}
       }
     },
-    "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\School_DataLayer.csproj": {
+    "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\School_DataLayer.csproj",
-        "projectName": "School_DataLayer",
-        "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\School_DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_DataLayer\\obj\\",
+        "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
+        "projectName": "Schools",
+        "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
+        "packagesPath": "C:\\Users\\Khaled\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -118,7 +65,11 @@
         },
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj": {
+                "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj"
+              }
+            }
           }
         },
         "restoreAuditProperties": {

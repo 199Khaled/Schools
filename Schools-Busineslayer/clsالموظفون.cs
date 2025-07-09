@@ -17,7 +17,7 @@ namespace SchoolsDb_BusinessLayer
         public clsالأشخاص الأشخاصInfo { get; set; }
         public string النوع { get; set; }
         public DateTime? تاريخ_التوظيف { get; set; }
-        public string تاريخ_الإنهاء { get; set; } = null;
+        public string تاريخ_الإنهاء { get; set; }
         public bool? نشط { get; set; }
 
 
@@ -49,15 +49,16 @@ int? معرّف_الموظف, int? معرّف_الشخص, string النوع, Dat
        private bool _AddNewالموظفون()
        {
         this.معرّف_الموظف = clsالموظفونData.AddNewالموظفون(
-this.معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.تاريخ_الإنهاء, this.نشط);
+this.معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.نشط,this.تاريخ_الإنهاء);
         return (this.معرّف_الموظف != null);
        }
 
 
-       public static bool AddNewالموظفون(
-ref int? معرّف_الموظف, int? معرّف_الشخص, string النوع, DateTime? تاريخ_التوظيف, bool? نشط, string تاريخ_الإنهاء = null)        {
+       public static bool AddNewالموظفون( ref int? معرّف_الموظف, int? معرّف_الشخص, string النوع,
+           DateTime? تاريخ_التوظيف, bool? نشط, string تاريخ_الإنهاء)      
+        {
         معرّف_الموظف = clsالموظفونData.AddNewالموظفون(
-معرّف_الشخص, النوع, تاريخ_التوظيف, تاريخ_الإنهاء, نشط);
+        معرّف_الشخص  , النوع, تاريخ_التوظيف, نشط, تاريخ_الإنهاء)  ;
 
         return (معرّف_الموظف != null);
 
@@ -67,14 +68,14 @@ ref int? معرّف_الموظف, int? معرّف_الشخص, string النوع,
        private bool _Updateالموظفون()
        {
         return clsالموظفونData.UpdateالموظفونByID(
-this.معرّف_الموظف, this.معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.تاريخ_الإنهاء, this.نشط);
+this.معرّف_الموظف, this.معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.نشط,this.تاريخ_الإنهاء);
        }
 
 
        public static bool UpdateالموظفونByID(
 int? معرّف_الموظف, int? معرّف_الشخص, string النوع, DateTime? تاريخ_التوظيف, bool? نشط, string تاريخ_الإنهاء = null)        {
         return clsالموظفونData.UpdateالموظفونByID(
-معرّف_الموظف, معرّف_الشخص, النوع, تاريخ_التوظيف, تاريخ_الإنهاء, نشط);
+معرّف_الموظف, معرّف_الشخص, النوع, تاريخ_التوظيف, نشط,تاريخ_الإنهاء);
 
         }
 
@@ -89,14 +90,14 @@ int? معرّف_الموظف, int? معرّف_الشخص, string النوع, Dat
             int? معرّف_الشخص = 0;
             string النوع = "";
             DateTime? تاريخ_التوظيف = DateTime.Now;
-            string تاريخ_الإنهاء = "";
+            string تاريخ_الإنهاء = null;
             bool? نشط = false;
             bool IsFound = clsالموظفونData.GetالموظفونInfoByID(معرّف_الموظف,
  ref معرّف_الشخص,  ref النوع,  ref تاريخ_التوظيف,  ref تاريخ_الإنهاء,  ref نشط);
 
            if (IsFound)
                return new clsالموظفون(
-معرّف_الموظف, معرّف_الشخص, النوع, تاريخ_التوظيف, تاريخ_الإنهاء, نشط);
+معرّف_الموظف, معرّف_الشخص, النوع, تاريخ_التوظيف, نشط , تاريخ_الإنهاء);
             else
                 return null;
             }

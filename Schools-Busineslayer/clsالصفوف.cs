@@ -88,7 +88,26 @@ int? معرّف_الصف, string اسم_الصف, string المستوى_الصف
             }
 
 
-       public static DataTable GetAllالصفوف()
+        public static clsالصفوف FindByاسم_الصف(string اسم_الصف)
+
+        {
+            if (اسم_الصف == null)
+            {
+                return null;
+            }
+            int? معرّف_الصف = 0;
+            string المستوى_الصفّي = "";
+            bool IsFound = clsالصفوفData.GetالصفوفInfoByClassRoomName(ref معرّف_الصف,
+                 اسم_الصف, ref المستوى_الصفّي);
+
+            if (IsFound)
+                return new clsالصفوف(
+                 معرّف_الصف, اسم_الصف, المستوى_الصفّي);
+            else
+                return null;
+        }
+
+        public static DataTable GetAllالصفوف()
        {
 
         return clsالصفوفData.GetAllالصفوف();

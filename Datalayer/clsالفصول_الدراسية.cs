@@ -55,6 +55,46 @@ namespace SchoolsDb_DataLayer
 
     return isFound;
 }
+        public static bool Getالفصول_الدراسيةInfoByClassName(ref int? معرّف_الفصل, string اسم_الفصل, ref int? السعة, ref string المبنى)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Select * From الفصول_الدراسية Where اسم_الفصل@ =اسم_الفصل";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@اسم_الفصل", اسم_الفصل ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_الفصل = (int)reader["معرّف_الفصل"];
+                                السعة = (int)reader["السعة"];
+                                المبنى = reader["المبنى"] != DBNull.Value ? reader["المبنى"].ToString() : null;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(Getالفصول_الدراسيةInfoByID), $"Parameter: معرّف_الفصل = " + معرّف_الفصل);
+            }
+
+            return isFound;
+        }
 
         public static DataTable GetAllالفصول_الدراسية()
 {

@@ -97,7 +97,8 @@ namespace SchoolsDb_DataLayer
     return dt;
 }
 
-        public static int? AddNewالأشخاص(string الاسم_الأول, string اسم_العائلة, DateTime? تاريخ_الميلاد, string اسم_الأب = null, string اسم_الأم = null, string الجنس = null, string المدينة = null, string الهاتف = null, string البريد_الإلكتروني = null)
+        public static int? AddNewالأشخاص(string الاسم_الأول, string اسم_العائلة, DateTime? تاريخ_الميلاد, string اسم_الأب = null, string اسم_الأم = null,
+            string الجنس = null, string المدينة = null, string الهاتف = null, string البريد_الإلكتروني = null)
     {
         int? معرّف_الشخص = null;
 
@@ -149,7 +150,9 @@ namespace SchoolsDb_DataLayer
         return معرّف_الشخص;
     }
 
-        public static bool UpdateالأشخاصByID(int? معرّف_الشخص, string الاسم_الأول, string اسم_العائلة, DateTime? تاريخ_الميلاد, string اسم_الأب = null, string اسم_الأم = null, string الجنس = null, string المدينة = null, string الهاتف = null, string البريد_الإلكتروني = null)
+        public static bool UpdateالأشخاصByID(int? معرّف_الشخص, string الاسم_الأول, string اسم_العائلة, DateTime? تاريخ_الميلاد,
+            string اسم_الأب = null, string اسم_الأم = null,
+        string الجنس = null, string المدينة = null, string الهاتف = null, string البريد_الإلكتروني = null)
 {
     int rowsAffected = 0;
 

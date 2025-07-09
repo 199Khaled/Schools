@@ -28,7 +28,7 @@ namespace Schools
         }
         private void _LoadTeacherSubjectDataFromDatabase()
         {
-            DataTable dtTeacherSucject = clsTeacherSubjects.GetAllTeacherSubjects();
+            DataTable dtTeacherSucject = clsمواد_المعلم.GetAllمواد_المعلم();
             if (dtTeacherSucject != null && dtTeacherSucject.Rows.Count > 0)
             {
                 _bindingSource.DataSource = dtTeacherSucject;

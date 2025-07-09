@@ -19,7 +19,7 @@ namespace Schools
         enMode _Mode;
 
 
-        clsPersons _persons;
+        clsالأشخاص _persons;
         BindingSource _bindingSource;
         public frmStudentsForm()
         {
@@ -29,7 +29,7 @@ namespace Schools
 
         private void _LoadAllStudentFromDatabase()
         {
-            DataTable dtStudents = clsStudents.GetAllStudents();
+            DataTable dtStudents = clsالطلاب.GetAllالطلاب();
             if (dtStudents != null && dtStudents.Rows.Count > 0)
             {
                 _bindingSource.DataSource = dtStudents;
@@ -82,7 +82,7 @@ namespace Schools
 
             return isValid;
         }
-        private void _LoadPersonData(clsPersons persons)
+        private void _LoadPersonData(clsالأشخاص persons)
         {
            // _persons = clsPersons.FindByPersonID(_personID);
 
@@ -94,26 +94,27 @@ namespace Schools
             }
             _persons = persons; 
 
-            txtFirstname.Text = _persons.Firstname;
-            txtLastname.Text = _persons.Lastname;
-            dtpDateOfBirth.Value = _persons.DateOfBirth.Value;
-            cbGender.Text = _persons.Gender;
-            cbCity.Text = _persons.City;
-            txtPhone.Text = _persons.Phone;
-            txtEmail.Text = _persons.Email;
+            txtFirstname.Text = _persons.الاسم_الأول;
+        
+            txtLastname.Text = _persons.اسم_العائلة;
+            dtpDateOfBirth.Value = _persons.تاريخ_الميلاد.Value;
+            cbGender.Text = _persons.الجنس;
+            cbCity.Text = _persons.المدينة;
+            txtPhone.Text = _persons.الهاتف;
+            txtEmail.Text = _persons.البريد_الإلكتروني;
         }
         private void _FillPersonData()
         {
             if (_Mode == enMode.AddNew)
-                _persons = new clsPersons();
+                _persons = new clsالأشخاص();
 
-            _persons.Firstname = txtFirstname.Text;
-            _persons.Lastname = txtLastname.Text;
-            _persons.DateOfBirth = dtpDateOfBirth.Value.Date;
-            _persons.Gender = cbGender.Text;
-            _persons.City = cbCity.Text;
-            _persons.Phone = txtPhone.Text;
-            _persons.Email = txtEmail.Text;
+            _persons.الاسم_الأول = txtFirstname.Text;
+            _persons.اسم_العائلة = txtLastname.Text;
+            _persons.تاريخ_الميلاد = dtpDateOfBirth.Value.Date;
+            _persons.الجنس = cbGender.Text;
+            _persons.المدينة = cbCity.Text;
+            _persons.الهاتف = txtPhone.Text;
+            _persons.البريد_الإلكتروني = txtEmail.Text;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -143,7 +144,7 @@ namespace Schools
             }
             int? studentID = null;
             // If the student was not added
-            if (!clsStudents.AddNewStudents(ref studentID, _persons.PersonID))
+            if (!clsالطلاب.AddNewالطلاب(ref studentID, _persons.معرّف_الشخص,DateTime.Now))
             {
                 MessageBox.Show("فشل في إضافة الطالب. الرجاء المحاولة مرة أخرى.", "خطأ",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -187,7 +188,7 @@ namespace Schools
             _Mode = enMode.Update; //we change the mode tho update mode
 
             int studentID = (int)dgvStudents.CurrentRow.Cells[0].Value;
-            clsPersons persons = clsStudents.FindByStudentID(studentID).PersonsInfo;
+            clsالأشخاص persons = clsالطلاب.FindByمعرّف_الطالب(studentID).الأشخاصInfo;
             _LoadPersonData(persons);
         }
 
@@ -207,14 +208,14 @@ namespace Schools
                 return;
 
             int studentID = (int)dgvStudents.CurrentRow.Cells[0].Value;
-            clsStudents students = clsStudents.FindByStudentID(studentID);
+            clsالطلاب students = clsالطلاب.FindByمعرّف_الطالب(studentID);
             if(students == null)
             {
                 MessageBox.Show("لم يتم العثور على طالب للبيانات المحددة.", "مطلوب التحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (warningMessage && clsStudents.DeleteStudents(studentID,students.PersonID))
+            if (warningMessage && clsالطلاب.Deleteالطلاب(studentID))
             {
                 MessageBox.Show("تم حذف الطالب بنجاح!", "تم الحذف بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetDefaultValue();

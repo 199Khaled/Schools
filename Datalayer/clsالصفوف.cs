@@ -13,6 +13,48 @@ namespace SchoolsDb_DataLayer
     {
         //#nullable enable
 
+        public static bool GetالصفوفInfoByClassRoomName(ref int? معرّف_الصف, string اسم_الصف, ref string المستوى_الصفّي)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Select * from الصفوف where اسم_الصف@ = اسم_الصف ";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@اسم_الصف", اسم_الصف ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_الصف = (int)reader["معرّف_الصف"];
+                                المستوى_الصفّي = (string)reader["المستوى_الصفّي"];
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetالصفوفInfoByClassRoomName), $"Parameter: اسم_الصف = " + معرّف_الصف);
+            }
+
+            return isFound;
+        }
+
         public static bool GetالصفوفInfoByID(int? معرّف_الصف , ref string اسم_الصف, ref string المستوى_الصفّي)
 {
     bool isFound = false;
@@ -46,6 +88,8 @@ namespace SchoolsDb_DataLayer
             }
         }
     }
+
+
     catch (Exception ex)
     {
         // Handle all exceptions in a general way

@@ -91,8 +91,27 @@ int? معرّف_الفصل, string اسم_الفصل, int? السعة, string ا
                 return null;
             }
 
+        public static clsالفصول_الدراسية FindByاسم_الفصل(string اسم_الفصل)
 
-       public static DataTable GetAllالفصول_الدراسية()
+        {
+            if (اسم_الفصل == null)
+            {
+                return null;
+            }
+            int معرّف_الفصل =0;
+            int? السعة = 0;
+            string المبنى = "";
+            bool IsFound = clsالفصول_الدراسيةData.Getالفصول_الدراسيةInfoByClassName(ref معرّف_الفصل,
+  اسم_الفصل, ref السعة, ref المبنى);
+
+            if (IsFound)
+                return new clsالفصول_الدراسية(
+ معرّف_الفصل, اسم_الفصل, السعة, المبنى);
+            else
+                return null;
+        }
+
+        public static DataTable GetAllالفصول_الدراسية()
        {
 
         return clsالفصول_الدراسيةData.GetAllالفصول_الدراسية();

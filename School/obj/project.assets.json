@@ -15,29 +15,25 @@
           }
         }
       },
-      "School_BisunissLayer/1.0.0": {
+      "Datalayer/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "School_DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         }
       },
-      "School_DataLayer/1.0.0": {
+      "Schools-Busineslayer/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Datalayer": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         }
       }
     },
@@ -55,29 +51,25 @@
           }
         }
       },
-      "School_BisunissLayer/1.0.0": {
+      "Datalayer/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "School_DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         }
       },
-      "School_DataLayer/1.0.0": {
+      "Schools-Busineslayer/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Datalayer": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         }
       }
     },
@@ -95,29 +87,25 @@
           }
         }
       },
-      "School_BisunissLayer/1.0.0": {
+      "Datalayer/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "School_DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         }
       },
-      "School_DataLayer/1.0.0": {
+      "Schools-Busineslayer/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Datalayer": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         }
       }
     },
@@ -135,29 +123,25 @@
           }
         }
       },
-      "School_BisunissLayer/1.0.0": {
+      "Datalayer/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "School_DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         }
       },
-      "School_DataLayer/1.0.0": {
+      "Schools-Busineslayer/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Datalayer": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         }
       }
     },
@@ -175,29 +159,25 @@
           }
         }
       },
-      "School_BisunissLayer/1.0.0": {
+      "Datalayer/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "School_DataLayer": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_BisunissLayer.dll": {}
+          "bin/placeholder/Datalayer.dll": {}
         }
       },
-      "School_DataLayer/1.0.0": {
+      "Schools-Busineslayer/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Datalayer": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/School_DataLayer.dll": {}
+          "bin/placeholder/Schools-Busineslayer.dll": {}
         }
       }
     }
@@ -233,43 +213,42 @@
         "packageIcon.png"
       ]
     },
-    "School_BisunissLayer/1.0.0": {
+    "Datalayer/1.0.0": {
       "type": "project",
-      "path": "../School_BisunissLayer/School_BisunissLayer.csproj",
-      "msbuildProject": "../School_BisunissLayer/School_BisunissLayer.csproj"
+      "path": "../Datalayer/Datalayer.csproj",
+      "msbuildProject": "../Datalayer/Datalayer.csproj"
     },
-    "School_DataLayer/1.0.0": {
+    "Schools-Busineslayer/1.0.0": {
       "type": "project",
-      "path": "../School_DataLayer/School_DataLayer.csproj",
-      "msbuildProject": "../School_DataLayer/School_DataLayer.csproj"
+      "path": "../Schools-Busineslayer/Schools-Busineslayer.csproj",
+      "msbuildProject": "../Schools-Busineslayer/Schools-Busineslayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Newtonsoft.Json >= 13.0.3",
-      "School_BisunissLayer >= 1.0.0"
+      "Schools-Busineslayer >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hamssa\\.nuget\\packages\\": {},
+    "C:\\Users\\Khaled\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
+      "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
       "projectName": "Schools",
-      "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\Schools.csproj",
-      "packagesPath": "C:\\Users\\Hamssa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School\\obj\\",
+      "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\Schools.csproj",
+      "packagesPath": "C:\\Users\\Khaled\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hamssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -283,8 +262,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj": {
-              "projectPath": "C:\\Users\\Hamssa\\Desktop\\Schools\\School_BisunissLayer\\School_BisunissLayer.csproj"
+            "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj": {
+              "projectPath": "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\Schools-Busineslayer.csproj"
             }
           }
         }

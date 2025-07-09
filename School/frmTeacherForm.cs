@@ -17,7 +17,7 @@ namespace Schools
         public enum enMode { AddNew = 1, Update = 2 };
         enMode _Mode;
 
-        clsPersons _persons;
+        clsالأشخاص _persons;
         BindingSource _bindingSource;
         public frmTeacherForm()
         {
@@ -34,7 +34,7 @@ namespace Schools
         }
         private void _LoadAllStudentFromDatabase()
         {
-            DataTable dtTeachers = clsEmployees.GetAllTeachers();
+            DataTable dtTeachers = clsالموظفون.GetAllالموظفون();
             if (dtTeachers != null && dtTeachers.Rows.Count > 0)
             {
                 _bindingSource.DataSource = dtTeachers;
@@ -74,79 +74,47 @@ namespace Schools
         private bool _CheckInput()
         {
             bool isValid = true;
-            isValid &= _IsInputValid(txtFirstname, "Firstname cannot be empty!");
-            isValid &= _IsInputValid(txtLastname, "Lastname cannot be empty!");
+            isValid &= _IsInputValid(txtFirstname, "لا يمكن أن يكون الاسم الأول فارغًا!");
+            isValid &= _IsInputValid(txtLastname, "لا يمكن أن يكون اسم العائلة فارغًا!");
 
             return isValid;
         }
-        private void _LoadPersonData(clsPersons persons)
+        private void _LoadPersonData(clsالأشخاص persons)
         {
             // _persons = clsPersons.FindByPersonID(_personID);
 
             if (persons == null)
             {
-                MessageBox.Show("No Person found for the given ID. Please try again.", "Error",
+                MessageBox.Show("لم يتم العثور على أي شخص لهذا الرقم. الرجاء المحاولة مرة أخرى.", "خطأ",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             _persons = persons;
 
-            txtFirstname.Text = _persons.Firstname;
-            txtLastname.Text = _persons.Lastname;
-            dtpDateOfBirth.Value = _persons.DateOfBirth.Value;
-            cbGender.Text = _persons.Gender;
-            cbCity.Text = _persons.City;
-            txtPhone.Text = _persons.Phone;
-            txtEmail.Text = _persons.Email;
+            txtFirstname.Text = _persons.الاسم_الأول;
+            txtFathername.Text = _persons.اسم_الأب;
+            txtMothername.Text = _persons.اسم_الأم;
+            txtLastname.Text = _persons.اسم_العائلة;
+            dtpDateOfBirth.Value = _persons.تاريخ_الميلاد.Value;
+            cbGender.Text = _persons.الجنس;
+            cbCity.Text = _persons.المدينة;
+            txtPhone.Text = _persons.الهاتف;
+            txtEmail.Text = _persons.البريد_الإلكتروني;
         }
         private void _FillPersonData()
         {
             if (_Mode == enMode.AddNew)
-                _persons = new clsPersons();
+                _persons = new clsالأشخاص();
 
-            _persons.Firstname = txtFirstname.Text;
-            _persons.Lastname = txtLastname.Text;
-            _persons.DateOfBirth = dtpDateOfBirth.Value.Date;
-            _persons.Gender = cbGender.Text;
-            _persons.City = cbCity.Text;
-            _persons.Phone = txtPhone.Text;
-            _persons.Email = txtEmail.Text;
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (!_CheckInput())
-                return;
-
-            _FillPersonData(); //fill the person data
-
-            //if the person was not added
-            if (!_persons.Save())
-            {
-                MessageBox.Show("Save operation fore Person failed. Please try again.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            //in case Update Mode 
-            if (_Mode == enMode.Update)
-            {
-                _LoadAllStudentFromDatabase();
-                _ResetDefaultValue();
-                return;
-            }
-            int? employeeID= null;
-            // If the student was not added
-            if (!clsEmployees.AddNewEmployees(ref employeeID, _persons.PersonID, clsEmployees.enPersonType.Teacher))
-            {
-                MessageBox.Show($"Failed to add Teacher. Please try again.", "Error",
-                                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            //in case everthing is good
-            _Mode = enMode.Update;
-            _LoadAllStudentFromDatabase();
-            _ResetDefaultValue();
+            _persons.الاسم_الأول = txtFirstname.Text;
+            _persons.اسم_الأب = txtFathername.Text;
+            _persons.اسم_الأم = txtMothername.Text;
+            _persons.اسم_العائلة = txtLastname.Text;
+            _persons.تاريخ_الميلاد = dtpDateOfBirth.Value.Date;
+            _persons.الجنس = cbGender.Text;
+            _persons.المدينة= cbCity.Text;
+            _persons.الهاتف = txtPhone.Text;
+            _persons.البريد_الإلكتروني = txtEmail.Text;
         }
 
         private void _FillComboBoxCity()
@@ -181,44 +149,11 @@ namespace Schools
             _Mode = enMode.Update; //we change the mode tho update mode
 
             int employeeID = (int)dgvTeachers.CurrentRow.Cells[0].Value;
-            clsPersons persons = clsEmployees.FindByEmployeeID(employeeID).PersonsInfo;
+            clsالأشخاص persons = clsالموظفون.FindByمعرّف_الموظف(employeeID).الأشخاصInfo;
             _LoadPersonData(persons);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtFirstname.Text))
-            {
-                MessageBox.Show("Please select a valid row before proceeding.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //wa make it sure, that the user will do the Transaction.
-            bool warningMessage = MessageBox.Show("Are you sure, you want to delete Data of this Teacher?", "Warning",
-                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
-
-            //if No, we go back from the methode
-            if (!warningMessage)
-                return;
-
-            int emplyeeID = (int)dgvTeachers.CurrentRow.Cells[0].Value;
-            clsEmployees teachers = clsEmployees.FindByEmployeeID(emplyeeID);
-            if (teachers == null)
-            {
-                MessageBox.Show("No Teacher found for the selected data.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (warningMessage && clsEmployees.DeleteEmployees(emplyeeID, teachers.PersonID))
-            {
-                MessageBox.Show("The Teacher has been deleted successfully!", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _ResetDefaultValue();
-                _LoadAllStudentFromDatabase();
-            }
-            else
-            {
-                MessageBox.Show("An error occurred while deleting the Teacher. Please try again.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+      
 
         private void cbFilterby_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -231,9 +166,9 @@ namespace Schools
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "EmployeeID" && !_IsNumber(txtFilterValue.Text))
+            if (!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "معرّف_الموظف" && !_IsNumber(txtFilterValue.Text))
             {
-                MessageBox.Show("Invalid Input, please enter a number");
+                MessageBox.Show("إدخال غير صالح، الرجاء إدخال رقم");
                 return;
             }
             else
@@ -245,7 +180,7 @@ namespace Schools
             string filterColumn = cbFilterby.Text.Trim();
             if (!string.IsNullOrEmpty(filterValue))
             {
-                if (filterColumn == "EmployeeID")
+                if (filterColumn == "معرّف_الموظف")
                     _bindingSource.Filter = $"{filterColumn} = {filterValue}";
                 else
                     _bindingSource.Filter = $"{filterColumn} like '{filterValue}%'";
@@ -267,12 +202,6 @@ namespace Schools
             else
                 return false;
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            _ResetDefaultValue();
-        }
-
         private void btnAssignSubjectToTeacher_Click(object sender, EventArgs e)
         {
             frmAddUpdateSubjects frm = new frmAddUpdateSubjects();
@@ -282,6 +211,82 @@ namespace Schools
         private void dgvTeachers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!_CheckInput())
+                return;
+
+            _FillPersonData(); //fill the person data
+
+            //if the person was not added
+            if (!_persons.Save())
+            {
+                MessageBox.Show("فشلت عملية الحفظ للشخص. الرجاء المحاولة مرة أخرى.", "خطأ",
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //in case Update Mode 
+            if (_Mode == enMode.Update)
+            {
+                _LoadAllStudentFromDatabase();
+                _ResetDefaultValue();
+                return;
+            }
+            int? employeeID = null;
+            // If the student was not added
+            if (!clsالموظفون.AddNewالموظفون(ref employeeID, _persons.معرّف_الشخص, "معلم", DateTime.Now, true, null))
+            {
+                MessageBox.Show("فشل في إضافة المعلم. الرجاء المحاولة مرة أخرى.", "خطأ",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //in case everthing is good
+            _Mode = enMode.Update;
+            _LoadAllStudentFromDatabase();
+            _ResetDefaultValue();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            _ResetDefaultValue();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFirstname.Text))
+            {
+                MessageBox.Show("يرجى تحديد صف صالح قبل المتابعة.", "مطلوب تحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //wa make it sure, that the user will do the Transaction.
+            bool warningMessage = MessageBox.Show("هل أنت متأكد أنك تريد حذف بيانات هذا المعلم؟", "تحذير",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
+
+            //if No, we go back from the methode
+            if (!warningMessage)
+                return;
+
+            int emplyeeID = (int)dgvTeachers.CurrentRow.Cells[0].Value;
+            clsالموظفون teachers =clsالموظفون.FindByمعرّف_الموظف(emplyeeID);
+            if (teachers == null)
+            {
+                MessageBox.Show("لم يتم العثور على أي معلم للبيانات المحددة.", "مطلوب تحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (warningMessage &&  clsالموظفون.Deleteالموظفون(emplyeeID))
+            {
+                MessageBox.Show("تم حذف المعلم بنجاح!", "تم الحذف بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ResetDefaultValue();
+                _LoadAllStudentFromDatabase();
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ أثناء حذف المعلم. الرجاء المحاولة مرة أخرى.", "فشل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

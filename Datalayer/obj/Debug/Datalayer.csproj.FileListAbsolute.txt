@@ -1,0 +1,2 @@
+C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.csproj.AssemblyReference.cache
+C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache

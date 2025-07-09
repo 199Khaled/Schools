@@ -17,8 +17,8 @@ namespace Schools
     {
         enum enMode  {Addnew = 1, Update=2}
         enMode _mode;
-        clsStudents _students;
-        clsEnrollments _enrollments;
+        clsالطلاب _students;
+        clsالتسجيلات _enrollments;
         BindingSource _bindingSource;
         public frmEnrollmentsFormcs()
         {
@@ -42,12 +42,12 @@ namespace Schools
         }
         private void _FillClassesComboBoxWithData()
         {
-            DataTable dt = clsClasses.GetAllClasses();
+            DataTable dt = clsالفصول_الدراسية.GetAllالفصول_الدراسية();
 
             cbClasses.Items.Clear();
             foreach (DataRow row in dt.Rows)
             {
-                cbClasses.Items.Add(row["ClassName"]);
+                cbClasses.Items.Add(row["اسم_الفصل"]);
             }
         }
 
@@ -57,11 +57,11 @@ namespace Schools
                 return;
 
             int StudentID= Convert.ToInt32(txtStudentID.Text);
-             _students = clsStudents.FindByStudentID(StudentID);
+             _students = clsالطلاب.FindByمعرّف_الطالب(StudentID);
 
             if (_students != null)
             {
-                txtVollname.Text = _students.PersonsInfo.Vollname;
+                txtVollname.Text = _students.الأشخاصInfo.الاسم_الكامل;
             }
             else
             {
@@ -132,11 +132,11 @@ namespace Schools
                 return false;
 
             if (_mode == enMode.Addnew)
-                _enrollments = new clsEnrollments();
+                _enrollments =new clsالتسجيلات();
 
-            _enrollments.StudentID = Convert.ToInt32(txtStudentID.Text);
-            _enrollments.ClassID = clsClasses.FindByClassName(cbClasses.Text).ClassID;
-            _enrollments.EnrollmentDate = dtpDateOfEnrollment.Value;
+            _enrollments.معرّف_الطالب = Convert.ToInt32(txtStudentID.Text);
+            _enrollments.معرّف_الصف = clsالصفوف.FindByاسم_الصف(cbClasses.Text).معرّف_الصف;
+            _enrollments.تاريخ_التسجيل = dtpDateOfEnrollment.Value;
 
             return true;
         }
@@ -161,7 +161,7 @@ namespace Schools
         }
         private void _LoadEnorollmentsDataFromDatabase()
         {
-            DataTable dtEnrollments = clsEnrollments.GetAllEnrollments();
+            DataTable dtEnrollments = clsالتسجيلات.GetAllالتسجيلات();
             if (dtEnrollments != null && dtEnrollments.Rows.Count > 0)
             {
                 _bindingSource.DataSource = dtEnrollments;

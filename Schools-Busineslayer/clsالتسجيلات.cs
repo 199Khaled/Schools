@@ -95,8 +95,7 @@ int? معرّف_التسجيل, int? معرّف_الطالب, int? معرّف_ا
                 return null;
             }
 
-
-       public static DataTable GetAllالتسجيلات()
+        public static DataTable GetAllالتسجيلات()
        {
 
         return clsالتسجيلاتData.GetAllالتسجيلات();

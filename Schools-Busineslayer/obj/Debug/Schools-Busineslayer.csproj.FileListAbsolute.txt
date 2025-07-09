@@ -1,0 +1,2 @@
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.csproj.AssemblyReference.cache
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.csproj.CoreCompileInputs.cache

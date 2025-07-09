@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -138,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\enrollemtns.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Schools-Busineslayer\Schools-Busineslayer.csproj">
+      <Project>{1bf73594-a2db-4a9b-8833-956618f199b6}</Project>
+      <Name>Schools-Busineslayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
