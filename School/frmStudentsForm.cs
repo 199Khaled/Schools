@@ -77,8 +77,8 @@ namespace Schools
         private bool _CheckInput()
         {
             bool isValid = true;
-            isValid &= _IsInputValid(txtFirstname, "Firstname cannot be empty!");
-            isValid &= _IsInputValid(txtLastname, "Lastname cannot be empty!");
+            isValid &= _IsInputValid(txtFirstname, "لا يمكن أن يكون الاسم الأول فارغًا!");
+            isValid &= _IsInputValid(txtLastname, "لا يمكن أن يكون اسم العائلة فارغًا!");
 
             return isValid;
         }
@@ -88,8 +88,8 @@ namespace Schools
 
             if (persons == null)
             {
-                MessageBox.Show("No Person found for the given ID. Please try again.", "Error",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("لم يتم العثور على شخص بالرقم المعطى. الرجاء المحاولة مرة أخرى.", "خطأ",
+                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             _persons = persons; 
@@ -130,8 +130,8 @@ namespace Schools
             //if the person was not added
             if (!_persons.Save())
             {
-                MessageBox.Show("Save operation fore Person failed. Please try again.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("فشل حفظ بيانات الشخص. الرجاء المحاولة مرة أخرى.", "خطأ",
+        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             //in case Update Mode 
@@ -145,8 +145,8 @@ namespace Schools
             // If the student was not added
             if (!clsStudents.AddNewStudents(ref studentID, _persons.PersonID))
             {
-                MessageBox.Show($"Failed to add Student. Please try again.", "Error",
-                                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("فشل في إضافة الطالب. الرجاء المحاولة مرة أخرى.", "خطأ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -195,12 +195,12 @@ namespace Schools
         {
             if (string.IsNullOrEmpty(txtFirstname.Text))
             {
-                MessageBox.Show("Please select a valid row before proceeding.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("يرجى تحديد صف صالح قبل المتابعة.", "مطلوب التحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //wa make it sure, that the user will do the Transaction.
-            bool warningMessage = MessageBox.Show("Are you sure, you want to delete Data of this Student?", "Warning",
-                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
+            bool warningMessage = MessageBox.Show("هل أنت متأكد من رغبتك في حذف بيانات هذا الطالب؟", "تحذير",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
 
             //if No, we go back from the methode
             if (!warningMessage)
@@ -210,19 +210,19 @@ namespace Schools
             clsStudents students = clsStudents.FindByStudentID(studentID);
             if(students == null)
             {
-                MessageBox.Show("No Student found for the selected data.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("لم يتم العثور على طالب للبيانات المحددة.", "مطلوب التحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (warningMessage && clsStudents.DeleteStudents(studentID,students.PersonID))
             {
-                MessageBox.Show("The Student has been deleted successfully!", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حذف الطالب بنجاح!", "تم الحذف بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetDefaultValue();
                 _LoadAllStudentFromDatabase();
             }
             else
             {
-                MessageBox.Show("An error occurred while deleting the Student. Please try again.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حدث خطأ أثناء حذف الطالب. الرجاء المحاولة مرة أخرى.", "فشل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -239,8 +239,8 @@ namespace Schools
         {
             if(!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "StudentID" && !_IsNumber(txtFilterValue.Text))
             {
-                MessageBox.Show("Invalid Input, please enter a number");
-                    return;
+                MessageBox.Show("إدخال غير صالح، الرجاء إدخال رقم");
+                return;
             }
             else
                 _ApplyFilter();

@@ -65,7 +65,7 @@ namespace Schools
             }
             else
             {
-                MessageBox.Show("Not Found");
+                MessageBox.Show("غير موجود");
             }
         }
 
@@ -104,8 +104,8 @@ namespace Schools
         {
             bool Valid = true;
 
-            Valid &= _IsInputValid(txtStudentID, "required field!");
-            Valid &= _IsInputValid(txtVollname, "required field!");
+            Valid &= _IsInputValid(txtStudentID, "حقل مطلوب!");
+            Valid &= _IsInputValid(txtVollname, "حقل مطلوب!");
             Valid &= _IsClassSelected();
 
             return Valid;
@@ -115,8 +115,8 @@ namespace Schools
         {
             if (cbClasses.SelectedIndex == -1)
             {
-                errorProvider1.SetError(cbClasses, "required field!");
-               cbClasses.FillColor = Color.LightPink;
+                errorProvider1.SetError(cbClasses, "حقل مطلوب!");
+                cbClasses.FillColor = Color.LightPink;
                 return false; ;
             }
             else
@@ -148,8 +148,8 @@ namespace Schools
             //if the person was not added
             if (!_enrollments.Save())
             {
-                MessageBox.Show("Save operation fore Student Enrollments failed. Please try again.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("فشلت عملية حفظ تسجيلات الطلاب. يرجى المحاولة مرة أخرى.", "خطأ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
