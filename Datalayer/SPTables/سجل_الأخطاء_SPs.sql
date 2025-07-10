@@ -65,7 +65,8 @@ BEGIN
     LTRIM(RTRIM(@تفاصيل_التتبع)),
     LTRIM(RTRIM(@الطابع_الزمني)),
     LTRIM(RTRIM(@شدة_الخطأ)),
-    LTRIM(RTRIM(@معلومات_إضافية)));
+    LTRIM(RTRIM(@معلومات_إضافية))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -84,7 +85,8 @@ CREATE OR ALTER PROCEDURE SP_Update_سجل_الأخطاء_ByID
     @تفاصيل_التتبع nvarchar(MAX) = NULL,
     @الطابع_الزمني datetime = NULL,
     @شدة_الخطأ nvarchar(50) = NULL,
-    @معلومات_إضافية nvarchar(MAX) = NULL
+    @معلومات_إضافية nvarchar(MAX) = NULL
+
 )
 AS
 BEGIN
@@ -102,7 +104,8 @@ BEGIN
     [تفاصيل_التتبع] = LTRIM(RTRIM(@تفاصيل_التتبع)),
     [الطابع_الزمني] = LTRIM(RTRIM(@الطابع_الزمني)),
     [شدة_الخطأ] = LTRIM(RTRIM(@شدة_الخطأ)),
-    [معلومات_إضافية] = LTRIM(RTRIM(@معلومات_إضافية))
+    [معلومات_إضافية] = LTRIM(RTRIM(@معلومات_إضافية))
+
         WHERE معرّف_الخطأ = @معرّف_الخطأ;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

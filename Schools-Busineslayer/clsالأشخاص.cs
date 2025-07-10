@@ -14,7 +14,6 @@ namespace SchoolsDb_BusinessLayer
         public string اسم_الأب { get; set; } = null;
         public string اسم_الأم { get; set; } = null;
         public string اسم_العائلة { get; set; }
-
         public string الاسم_الكامل
         {
             get
@@ -61,7 +60,7 @@ namespace SchoolsDb_BusinessLayer
         private bool _AddNewالأشخاص()
         {
             this.معرّف_الشخص = clsالأشخاصData.AddNewالأشخاص(
-                this.الاسم_الأول, this.اسم_العائلة, this.تاريخ_الميلاد,this.اسم_الأب, this.اسم_الأم,
+                this.الاسم_الأول, this.اسم_العائلة, this.تاريخ_الميلاد,this.اسم_الأب, this.اسم_الأم
                 , this.الجنس, this.المدينة, this.الهاتف, this.البريد_الإلكتروني);
             return (this.معرّف_الشخص != null);
         }

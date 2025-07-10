@@ -58,6 +58,93 @@ namespace SchoolsDb_DataLayer
     return isFound;
 }
 
+        public static bool GetالموظفونInfoByمعرّف_الشخص(ref int? معرّف_الموظف,  int? معرّف_الشخص, ref string النوع, ref DateTime? تاريخ_التوظيف, ref string تاريخ_الإنهاء, ref bool? نشط)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM الموظفون WHERE معرّف_الشخص = @معرّف_الشخص";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_الموظف = (int)reader["معرّف_الموظف"];
+                                النوع = (string)reader["النوع"];
+                                تاريخ_التوظيف = (DateTime)reader["تاريخ_التوظيف"];
+                                تاريخ_الإنهاء = reader["تاريخ_الإنهاء"] != DBNull.Value ? reader["تاريخ_الإنهاء"].ToString() : null;
+                                نشط = reader["نشط"] != DBNull.Value ? (bool?)reader["نشط"] : null;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetالموظفونInfoByID), $"Parameter: معرّف_الموظف = " + معرّف_الموظف);
+            }
+
+            return isFound;
+        }
+
+        public static bool GetالموظفونInfoBy(int? معرّف_الموظف, ref int? معرّف_الشخص, ref string النوع, ref DateTime? تاريخ_التوظيف, ref string تاريخ_الإنهاء, ref bool? نشط)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SP_Get_الموظفون_ByID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@معرّف_الموظف", معرّف_الموظف ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_الشخص = (int)reader["معرّف_الشخص"];
+                                النوع = (string)reader["النوع"];
+                                تاريخ_التوظيف = (DateTime)reader["تاريخ_التوظيف"];
+                                تاريخ_الإنهاء = reader["تاريخ_الإنهاء"] != DBNull.Value ? reader["تاريخ_الإنهاء"].ToString() : null;
+                                نشط = reader["نشط"] != DBNull.Value ? (bool?)reader["نشط"] : null;
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetالموظفونInfoByID), $"Parameter: معرّف_الموظف = " + معرّف_الموظف);
+            }
+
+            return isFound;
+        }
         public static DataTable GetAllالموظفون()
 {
     DataTable dt = new DataTable();
@@ -66,11 +153,39 @@ namespace SchoolsDb_DataLayer
     {
         using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
         {
-            string query = "SP_Get_All_الموظفون";
+                    // الأشخاص.[معرّف_الشخص]           AS [معرّف الشخص],
+                    string query = @"
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+             SELECT 
+    الموظفون.[معرّف_الموظف]          AS [معرّف_الموظف],
+    CASE 
+        WHEN الأشخاص.[اسم_الأب] IS NULL OR الأشخاص.[اسم_الأب] = ''
+            THEN الأشخاص.[الاسم_الأول] + ' ' + الأشخاص.[اسم_العائلة]
+        ELSE 
+            الأشخاص.[الاسم_الأول] + ' ' + الأشخاص.[اسم_الأب] + ' ' + الأشخاص.[اسم_العائلة]
+    END AS [الاسم_الكامل],
+
+    الأشخاص.[تاريخ_الميلاد]          AS [تاريخ الميلاد],
+    الأشخاص.[الجنس]                 AS [الجنس],
+    الأشخاص.[المدينة]               AS [المدينة],
+    الأشخاص.[الهاتف]               AS [الهاتف],
+    الأشخاص.[البريد_الإلكتروني]     AS [البريد الإلكتروني],
+
+    الموظفون.[النوع]                 AS [نوع الوظيفة],
+    الموظفون.[تاريخ_التوظيف]         AS [تاريخ التوظيف],
+    الموظفون.[تاريخ_الإنهاء]         AS [تاريخ الإنهاء],
+    الموظفون.[نشط]                  AS [نشط]
+
+FROM 
+    الموظفون
+INNER JOIN 
+    الأشخاص 
+ON 
+    الموظفون.[معرّف_الشخص] = الأشخاص.[معرّف_الشخص]
+";
+                    using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.CommandType = CommandType.StoredProcedure; 
+              //  command.CommandType = CommandType.StoredProcedure; 
 
                 connection.Open();
 

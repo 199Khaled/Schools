@@ -61,7 +61,8 @@ BEGIN
         INSERT INTO نتائج_الامتحانات_للطلاب ([معرّف_الطالب],[معرّف_الاختبار],[الدرجة])
         VALUES (    LTRIM(RTRIM(@معرّف_الطالب)),
     LTRIM(RTRIM(@معرّف_الاختبار)),
-    LTRIM(RTRIM(@الدرجة)));
+    LTRIM(RTRIM(@الدرجة))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -78,7 +79,8 @@ CREATE OR ALTER PROCEDURE SP_Update_نتائج_الامتحانات_للطلاب
     @معرّف_النتيجة int,
     @معرّف_الطالب int,
     @معرّف_الاختبار int,
-    @الدرجة decimal(5,2) = NULL
+    @الدرجة decimal(5,2) = NULL
+
 )
 AS
 BEGIN
@@ -94,7 +96,8 @@ BEGIN
         UPDATE نتائج_الامتحانات_للطلاب
         SET     [معرّف_الطالب] = LTRIM(RTRIM(@معرّف_الطالب)),
     [معرّف_الاختبار] = LTRIM(RTRIM(@معرّف_الاختبار)),
-    [الدرجة] = LTRIM(RTRIM(@الدرجة))
+    [الدرجة] = LTRIM(RTRIM(@الدرجة))
+
         WHERE معرّف_النتيجة = @معرّف_النتيجة;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

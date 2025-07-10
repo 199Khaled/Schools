@@ -98,7 +98,7 @@ int? معرّف_الفصل, string اسم_الفصل, int? السعة, string ا
             {
                 return null;
             }
-            int معرّف_الفصل =0;
+            int? معرّف_الفصل =0;
             int? السعة = 0;
             string المبنى = "";
             bool IsFound = clsالفصول_الدراسيةData.Getالفصول_الدراسيةInfoByClassName(ref معرّف_الفصل,

@@ -54,6 +54,47 @@ namespace SchoolsDb_DataLayer
     return isFound;
 }
 
+        public static bool GetالموادInfoBySubjectName(ref int? معرّف_المادة, string اسم_المادة)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Select * from المواد where اسم_المادة@ = اسم_المادة ";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@اسم_المادة", اسم_المادة ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_المادة = (int)reader["معرّف_المادة"];
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetالموادInfoByID), $"Parameter: معرّف_المادة = " + معرّف_المادة);
+            }
+
+            return isFound;
+        }
+
         public static DataTable GetAllالمواد()
 {
     DataTable dt = new DataTable();

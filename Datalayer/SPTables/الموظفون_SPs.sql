@@ -65,7 +65,8 @@ BEGIN
     LTRIM(RTRIM(@النوع)),
     LTRIM(RTRIM(@تاريخ_التوظيف)),
     LTRIM(RTRIM(@تاريخ_الإنهاء)),
-    LTRIM(RTRIM(@نشط)));
+    LTRIM(RTRIM(@نشط))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -84,7 +85,8 @@ CREATE OR ALTER PROCEDURE SP_Update_الموظفون_ByID
     @النوع nvarchar(100),
     @تاريخ_التوظيف date,
     @تاريخ_الإنهاء nvarchar(15) = NULL,
-    @نشط bit = NULL
+    @نشط bit = NULL
+
 )
 AS
 BEGIN
@@ -102,7 +104,8 @@ BEGIN
     [النوع] = LTRIM(RTRIM(@النوع)),
     [تاريخ_التوظيف] = LTRIM(RTRIM(@تاريخ_التوظيف)),
     [تاريخ_الإنهاء] = LTRIM(RTRIM(@تاريخ_الإنهاء)),
-    [نشط] = LTRIM(RTRIM(@نشط))
+    [نشط] = LTRIM(RTRIM(@نشط))
+
         WHERE معرّف_الموظف = @معرّف_الموظف;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

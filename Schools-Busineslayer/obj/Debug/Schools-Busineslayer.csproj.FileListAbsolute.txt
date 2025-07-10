@@ -1,2 +1,11 @@
 C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.csproj.AssemblyReference.cache
 C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.csproj.CoreCompileInputs.cache
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Schools-Busineslayer.dll
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Schools-Busineslayer.pdb
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Datalayer.dll
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Datalayer.pdb
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-.0FB22289.Up2Date
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.dll
+C:\Users\Khaled\Desktop\Schools\Schools-Busineslayer\obj\Debug\Schools-Busineslayer.pdb

@@ -57,7 +57,8 @@ BEGIN
 
         -- Insert the data into the table
         INSERT INTO المواد ([اسم_المادة])
-        VALUES (    LTRIM(RTRIM(@اسم_المادة)));
+        VALUES (    LTRIM(RTRIM(@اسم_المادة))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -72,7 +73,8 @@ GO
 CREATE OR ALTER PROCEDURE SP_Update_المواد_ByID
 (
     @معرّف_المادة int,
-    @اسم_المادة nvarchar(100)
+    @اسم_المادة nvarchar(100)
+
 )
 AS
 BEGIN
@@ -86,7 +88,8 @@ BEGIN
 
         -- Update the record in the table
         UPDATE المواد
-        SET     [اسم_المادة] = LTRIM(RTRIM(@اسم_المادة))
+        SET     [اسم_المادة] = LTRIM(RTRIM(@اسم_المادة))
+
         WHERE معرّف_المادة = @معرّف_المادة;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

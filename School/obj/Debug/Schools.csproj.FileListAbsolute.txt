@@ -39,10 +39,6 @@ C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Schools.exe.config
 C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Schools.exe
 C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Schools.pdb
 C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Khaled\Desktop\Schools\School\bin\Debug\School_BisunissLayer.dll
-C:\Users\Khaled\Desktop\Schools\School\bin\Debug\School_DataLayer.dll
-C:\Users\Khaled\Desktop\Schools\School\bin\Debug\School_BisunissLayer.pdb
-C:\Users\Khaled\Desktop\Schools\School\bin\Debug\School_DataLayer.pdb
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.csproj.AssemblyReference.cache
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.frmAddUpdateSubjects.resources
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.frmEnrollmentsFormcs.resources
@@ -54,3 +50,7 @@ C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.csproj.CoreCompileInput
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.csproj.Up2Date
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.exe
 C:\Users\Khaled\Desktop\Schools\School\obj\Debug\Schools.pdb
+C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Schools-Busineslayer.dll
+C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Datalayer.dll
+C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Schools-Busineslayer.pdb
+C:\Users\Khaled\Desktop\Schools\School\bin\Debug\Datalayer.pdb

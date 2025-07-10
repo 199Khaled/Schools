@@ -14,9 +14,9 @@ namespace SchoolsDb_BusinessLayer
 
         public int? معرّف_الحضور { get; set; }
         public int? معرّف_الطالب { get; set; }
-        public clsStudents StudentsInfo { get; set; }
+        public clsالطلاب StudentsInfo { get; set; }
         public int? معرّف_الفصل { get; set; }
-        public clsClasses ClassesInfo { get; set; }
+        public clsالفصول_الدراسية ClassesInfo { get; set; }
         public DateTime? تاريخ_الحضور { get; set; }
         public string الحالة { get; set; } = null;
 
@@ -36,9 +36,9 @@ namespace SchoolsDb_BusinessLayer
 int? معرّف_الحضور, int? معرّف_الطالب, int? معرّف_الفصل, DateTime? تاريخ_الحضور, string الحالة = null)        {
             this.معرّف_الحضور = معرّف_الحضور;
             this.معرّف_الطالب = معرّف_الطالب;
-            this.StudentsInfo = clsStudents.FindByStudentID(معرّف_الطالب);
+            this.StudentsInfo = clsالطلاب.FindByمعرّف_الطالب(معرّف_الطالب);
             this.معرّف_الفصل = معرّف_الفصل;
-            this.ClassesInfo = clsClasses.FindByClassID(معرّف_الفصل);
+            this.ClassesInfo = clsالفصول_الدراسية.FindByمعرّف_الفصل(معرّف_الفصل);
             this.تاريخ_الحضور = تاريخ_الحضور;
             this.الحالة = الحالة;
             Mode = enMode.Update;

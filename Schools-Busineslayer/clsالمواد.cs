@@ -83,8 +83,24 @@ int? معرّف_المادة, string اسم_المادة)        {
                 return null;
             }
 
+        public static clsالمواد FindByاسم_المادة(string اسم_المادة)
 
-       public static DataTable GetAllالمواد()
+        {
+            if (اسم_المادة == null)
+            {
+                return null;
+            }
+            int? معرّف_المادة = 0;
+            bool IsFound = clsالموادData.GetالموادInfoBySubjectName(ref معرّف_المادة, اسم_المادة);
+
+            if (IsFound)
+                return new clsالمواد(
+ معرّف_المادة, اسم_المادة);
+            else
+                return null;
+        }
+
+        public static DataTable GetAllالمواد()
        {
 
         return clsالموادData.GetAllالمواد();

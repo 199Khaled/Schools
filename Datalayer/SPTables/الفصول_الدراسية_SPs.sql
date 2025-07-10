@@ -61,7 +61,8 @@ BEGIN
         INSERT INTO الفصول_الدراسية ([اسم_الفصل],[السعة],[المبنى])
         VALUES (    LTRIM(RTRIM(@اسم_الفصل)),
     LTRIM(RTRIM(@السعة)),
-    LTRIM(RTRIM(@المبنى)));
+    LTRIM(RTRIM(@المبنى))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -78,7 +79,8 @@ CREATE OR ALTER PROCEDURE SP_Update_الفصول_الدراسية_ByID
     @معرّف_الفصل int,
     @اسم_الفصل varchar(50),
     @السعة int,
-    @المبنى varchar(50) = NULL
+    @المبنى varchar(50) = NULL
+
 )
 AS
 BEGIN
@@ -94,7 +96,8 @@ BEGIN
         UPDATE الفصول_الدراسية
         SET     [اسم_الفصل] = LTRIM(RTRIM(@اسم_الفصل)),
     [السعة] = LTRIM(RTRIM(@السعة)),
-    [المبنى] = LTRIM(RTRIM(@المبنى))
+    [المبنى] = LTRIM(RTRIM(@المبنى))
+
         WHERE معرّف_الفصل = @معرّف_الفصل;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

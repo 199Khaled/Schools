@@ -1,2 +1,9 @@
 C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.csproj.AssemblyReference.cache
 C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
+C:\Users\Khaled\Desktop\Schools\Datalayer\bin\Debug\Datalayer.dll
+C:\Users\Khaled\Desktop\Schools\Datalayer\bin\Debug\Datalayer.pdb
+C:\Users\Khaled\Desktop\Schools\Datalayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Khaled\Desktop\Schools\Datalayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.csproj.Up2Date
+C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.dll
+C:\Users\Khaled\Desktop\Schools\Datalayer\obj\Debug\Datalayer.pdb

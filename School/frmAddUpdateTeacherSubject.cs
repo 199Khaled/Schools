@@ -17,8 +17,8 @@ namespace Schools
     {
         public enum enMode { AddNew = 1, Update = 2 };
         enMode _Mode;
-        clsTeacherSubjects _teacherSubjects;
-        clsEmployees _employee;
+        clsمواد_المعلم _teacherSubjects;
+        clsالموظفون _employee;
         BindingSource _bindingSource;
         public frmAddUpdateSubjects()
         {
@@ -47,16 +47,16 @@ namespace Schools
             cbSubjects.SelectedIndex = -1;
         }
         
-        private void _LoadData(clsTeacherSubjects teacherSubjects)
+        private void _LoadData(clsمواد_المعلم teacherSubjects)
         {
             if(teacherSubjects == null)
             {
                 return;
             }
             _teacherSubjects = teacherSubjects;
-            txtTeacherID.Text = teacherSubjects.TeacherID.ToString();  //TeacherID is equall EmployeeID for Teacher 
-            txtVollname.Text = clsEmployees.FindByEmployeeID(_teacherSubjects.TeacherID).PersonsInfo.Vollname;
-            cbSubjects.Text = _teacherSubjects.SubjectsInfo.SubjectName;
+            txtTeacherID.Text = teacherSubjects.معرّف_المعلم.ToString();  //TeacherID is equall EmployeeID for Teacher 
+            txtVollname.Text = clsالموظفون.FindByمعرّف_الموظف(_teacherSubjects.معرّف_المعلم).الأشخاصInfo.الاسم_الكامل;
+            cbSubjects.Text = _teacherSubjects.الموادInfo.اسم_المادة;
         }
 
         private bool _IsInputValid(Guna2TextBox textname, string message)
@@ -79,7 +79,7 @@ namespace Schools
         {
             if (cbSubjects.SelectedIndex == -1)
             {
-                errorProvider1.SetError(cbSubjects, "Subject cannot be empty!");
+                errorProvider1.SetError(cbSubjects, "لا يمكن ترك حقل المادة فارغًا!");
                 cbSubjects.FillColor = Color.LightPink;
                 return false; ;
             }
@@ -94,8 +94,8 @@ namespace Schools
         {
             bool Valid = true;
 
-            Valid &= _IsInputValid(txtTeacherID, "TeacherID cannot be empty!");
-            Valid &= _IsInputValid(txtVollname, "Teachername cannot be empty!");
+            Valid &= _IsInputValid(txtTeacherID, "لا يمكن ترك رقم المعلم فارغًا!");
+            Valid &= _IsInputValid(txtVollname, "لا يمكن ترك اسم المعلم فارغًا!");
             Valid &= _IsSubjectSelected();
          
             return Valid;
@@ -106,10 +106,10 @@ namespace Schools
                 return false;
 
             if (_Mode == enMode.AddNew)
-                _teacherSubjects = new clsTeacherSubjects();
+                _teacherSubjects = new clsمواد_المعلم();
 
-            _teacherSubjects.TeacherID = Convert.ToInt32(txtTeacherID.Text.Trim());
-            _teacherSubjects.SubjectID = clsSubjects.FindBySubjectName(cbSubjects.Text).SubjectID;
+            _teacherSubjects.معرّف_المعلم = Convert.ToInt32(txtTeacherID.Text.Trim());
+            _teacherSubjects.معرّف_المادة = clsالمواد.FindByاسم_المادة(cbSubjects.Text).معرّف_المادة;
 
             return true;
         }
@@ -126,8 +126,8 @@ namespace Schools
             //if the person was not added
             if (!_teacherSubjects.Save())
             {
-                MessageBox.Show("Save operation fore Teacher-Subject failed. Please try again.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("فشلت عملية الحفظ. الرجاء المحاولة مرة أخرى.", "خطأ",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -145,12 +145,12 @@ namespace Schools
         
         private void _FillSubjectComboBoxWithData()
         {
-            DataTable dt = clsSubjects.GetAllSubjects();
+            DataTable dt = clsالمواد.GetAllالمواد();
 
             cbSubjects.Items.Clear();
             foreach(DataRow row in dt.Rows)
             {
-                cbSubjects.Items.Add(row["SubjectName"]);
+                cbSubjects.Items.Add(row["اسم_المادة"]);
             }
         }
 
@@ -160,15 +160,15 @@ namespace Schools
                 return;
 
             int TeacherID = Convert.ToInt32(txtTeacherID.Text);
-            _employee = clsEmployees.FindByEmployeeID(TeacherID);
+            _employee = clsالموظفون.FindByمعرّف_الموظف(TeacherID);
 
             if(_employee != null)
             {
-                txtVollname.Text = _employee.PersonsInfo.Vollname;
+                txtVollname.Text = _employee.الأشخاصInfo.الاسم_الكامل;
             }
             else
             {
-                MessageBox.Show("Not Found");
+                MessageBox.Show("غير موجود");
             }
         }
 
@@ -200,7 +200,7 @@ namespace Schools
 
             if (!string.IsNullOrEmpty(filterValue))
             {
-                if ((filterColumn == "TeacherID" || filterColumn == "SubjectID") && _IsNumber(filterValue))
+                if ((filterColumn == "TeacherID" || filterColumn == "معرّف_المادة") && _IsNumber(filterValue))
                     _bindingSource.Filter = $"{filterColumn} = {filterValue}";
                 
             }
@@ -221,7 +221,7 @@ namespace Schools
             _Mode = enMode.Update;
 
             int TeacherSujectID = (int)dgvTeacherSubject.CurrentRow.Cells[0].Value;
-            clsTeacherSubjects TeacherSubjects = clsTeacherSubjects.FindByTeacherSubjectID(TeacherSujectID);
+            clsمواد_المعلم TeacherSubjects = clsمواد_المعلم.FindByمعرّف_مادة_المعلم(TeacherSujectID);
 
             _LoadData(TeacherSubjects);
         }
@@ -230,33 +230,32 @@ namespace Schools
         {
             if (string.IsNullOrEmpty(txtTeacherID.Text) && string.IsNullOrEmpty(txtVollname.Text)  )
             {
-                MessageBox.Show("Please select a valid row before proceeding.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("يرجى تحديد صف صالح قبل المتابعة.", "مطلوب اختيار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //wa make it sure, that the user will do the Transaction.
-            bool warningMessage = MessageBox.Show("Are you sure, you want to delete Data of this Teacher?", "Warning",
-                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
-
+            bool warningMessage = MessageBox.Show("هل أنت متأكد أنك تريد حذف بيانات هذا المعلم؟", "تحذير",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes;
             //if No, we go back from the methode
             if (!warningMessage)
                 return;
 
             int TeacherSubjectID = (int)dgvTeacherSubject.CurrentRow.Cells[0].Value;
-            clsTeacherSubjects TeacherSubject = clsTeacherSubjects.FindByTeacherSubjectID(TeacherSubjectID);
+            clsمواد_المعلم TeacherSubject = clsمواد_المعلم.FindByمعرّف_مادة_المعلم(TeacherSubjectID);
             if (TeacherSubject == null)
             {
-                MessageBox.Show("No TeacherSubject found for the selected data.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("لم يتم العثور على مادة مرتبطة بالمعلم للبيانات المحددة.", "مطلوب تحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (warningMessage && clsTeacherSubjects.DeleteTeacherSubjects(TeacherSubjectID))
+            if (warningMessage && clsمواد_المعلم.Deleteمواد_المعلم(TeacherSubjectID))
             {
                 _ResetDefaultValue();
                 _LoadTeacherSubjectDataFromDatabase();
             }
             else
             {
-                MessageBox.Show("An error occurred while deleting the TeacherSubject. Please try again.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("حدث خطأ أثناء حذف مادة المعلم. الرجاء المحاولة مرة أخرى.", "فشل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

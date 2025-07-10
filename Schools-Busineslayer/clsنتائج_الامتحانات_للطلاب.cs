@@ -17,7 +17,7 @@ namespace SchoolsDb_BusinessLayer
         public clsالطلاب الطلابInfo { get; set; }
         public int? معرّف_الاختبار { get; set; }
         public decimal? الدرجة { get; set; }
-
+        public clsنتائج_الامتحانات_للطلاب نتائج_الامتحانات_للطلابInfo { get; set; }
 
         public clsنتائج_الامتحانات_للطلاب()
         {

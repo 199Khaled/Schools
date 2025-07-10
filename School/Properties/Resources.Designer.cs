@@ -63,6 +63,16 @@ namespace Schools.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Employees {
+            get {
+                object obj = ResourceManager.GetObject("Employees", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap enrollemtns {
             get {
                 object obj = ResourceManager.GetObject("enrollemtns", resourceCulture);

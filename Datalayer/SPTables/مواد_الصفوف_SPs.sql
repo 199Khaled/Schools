@@ -61,7 +61,8 @@ BEGIN
         INSERT INTO مواد_الصفوف ([معرّف_الصف],[معرّف_المادة],[معرّف_المعلم])
         VALUES (    LTRIM(RTRIM(@معرّف_الصف)),
     LTRIM(RTRIM(@معرّف_المادة)),
-    LTRIM(RTRIM(@معرّف_المعلم)));
+    LTRIM(RTRIM(@معرّف_المعلم))
+);
 
         -- Set the new ID
         SET @NewID = SCOPE_IDENTITY();  -- Get the last inserted ID
@@ -78,7 +79,8 @@ CREATE OR ALTER PROCEDURE SP_Update_مواد_الصفوف_ByID
     @معرّف_مادة_الصف int,
     @معرّف_الصف int,
     @معرّف_المادة int,
-    @معرّف_المعلم int = NULL
+    @معرّف_المعلم int = NULL
+
 )
 AS
 BEGIN
@@ -94,7 +96,8 @@ BEGIN
         UPDATE مواد_الصفوف
         SET     [معرّف_الصف] = LTRIM(RTRIM(@معرّف_الصف)),
     [معرّف_المادة] = LTRIM(RTRIM(@معرّف_المادة)),
-    [معرّف_المعلم] = LTRIM(RTRIM(@معرّف_المعلم))
+    [معرّف_المعلم] = LTRIM(RTRIM(@معرّف_المعلم))
+
         WHERE معرّف_مادة_الصف = @معرّف_مادة_الصف;
         
         -- Optionally, you can check if the update was successful and raise an error if no rows were updated

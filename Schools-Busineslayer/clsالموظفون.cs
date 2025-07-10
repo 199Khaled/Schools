@@ -103,7 +103,29 @@ int? معرّف_الموظف, int? معرّف_الشخص, string النوع, Dat
             }
 
 
-       public static DataTable GetAllالموظفون()
+        public static clsالموظفون FindByمعرّف_الشخص(int? معرّف_الشخص)
+
+        {
+            if (معرّف_الشخص == null)
+            {
+                return null;
+            }
+            int? معرّف_الموظف = 0;
+            string النوع = "";
+            DateTime? تاريخ_التوظيف = DateTime.Now;
+            string تاريخ_الإنهاء = null;
+            bool? نشط = false;
+            bool IsFound = clsالموظفونData.GetالموظفونInfoByمعرّف_الشخص(ref معرّف_الموظف,
+  معرّف_الشخص, ref النوع, ref تاريخ_التوظيف, ref تاريخ_الإنهاء, ref نشط);
+
+            if (IsFound)
+                return new clsالموظفون(
+ معرّف_الموظف, معرّف_الشخص, النوع, تاريخ_التوظيف, نشط, تاريخ_الإنهاء);
+            else
+                return null;
+        }
+
+        public static DataTable GetAllالموظفون()
        {
 
         return clsالموظفونData.GetAllالموظفون();

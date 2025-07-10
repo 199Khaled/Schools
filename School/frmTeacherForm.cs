@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Schools
 {
-    public partial class frmTeacherForm: Form
+    public partial class frmTeacherForm : Form
     {
         public enum enMode { AddNew = 1, Update = 2 };
         enMode _Mode;
@@ -31,6 +31,7 @@ namespace Schools
 
             _LoadAllStudentFromDatabase();
             _FillComboBoxCity();
+            _FillComoBoxJobType();
         }
         private void _LoadAllStudentFromDatabase()
         {
@@ -48,8 +49,12 @@ namespace Schools
             _Mode = enMode.AddNew;//at first we set the mode  to addnew
 
             txtFirstname.Clear();
+            txtFathername.Clear();
+            txtMothername.Clear();
             txtLastname.Clear();
-            cbGender.SelectedIndex = 0;
+            cbGender.SelectedIndex = -1;
+            cbCity.SelectedIndex = -1;
+            cbJobTyp.SelectedIndex = -1;
             txtEmail.Clear();
             txtPhone.Clear();
             dtpDateOfBirth.Value = DateTime.Now;
@@ -96,10 +101,13 @@ namespace Schools
             txtMothername.Text = _persons.اسم_الأم;
             txtLastname.Text = _persons.اسم_العائلة;
             dtpDateOfBirth.Value = _persons.تاريخ_الميلاد.Value;
-            cbGender.Text = _persons.الجنس;
+            cbGender.Text = _persons.الجنس.Trim();
             cbCity.Text = _persons.المدينة;
             txtPhone.Text = _persons.الهاتف;
             txtEmail.Text = _persons.البريد_الإلكتروني;
+
+            clsالموظفون employees = clsالموظفون.FindByمعرّف_الشخص(_persons.معرّف_الشخص);
+            chbAktive.Checked = Convert.ToBoolean(employees.نشط);
         }
         private void _FillPersonData()
         {
@@ -119,13 +127,29 @@ namespace Schools
 
         private void _FillComboBoxCity()
         {
-            // 1. Liste der Städte und Gemeinden im Neckar-Odenwald-Kreis erstellen
             List<string> cities = new List<string>
-        {
-        "Adelsheim","Aglasterhausen", "Billigheim","Binau","Buchen","Elztal", "Fahrenbach", "Hardheim",
-        "Haßmersheim","Höpfingen","Hüffenhardt", "Limbach","Mosbach","Mudau", "Neckargerach", "Neckarzimmern",
-        "Neunkirchen", "Obrigheim", "Osterburken",  "Ravenstein", "Rosenberg", "Schefflenz", "Schwarzach", "Seckach",
-        "Waldbrunn", "Walldürn", "Zwingenberg"};
+       {
+    "دمشق",       // Damascus
+    "حلب",        // Aleppo
+    "حمص",        // Homs
+    "حماة",        // Hama
+    "اللاذقية",    // Latakia
+    "طرطوس",       // Tartus
+    "دير الزور",   // Deir ez-Zor
+    "الرقة",       // Raqqa
+    "السويداء",    // As-Suwayda
+    "درعا",        // Daraa
+    "إدلب",        // Idlib
+    "القنيطرة",    // Quneitra
+    "الحسكة",      // Al-Hasakah
+    "ريف دمشق",    // Rural Damascus
+    "عين العرب",   // Kobane / Ayn al-Arab
+    "القامشلي",    // Qamishli
+    "تل أبيض",     // Tal Abyad
+    "منبج",        // Manbij
+    "البوكمال",    // Al-Bukamal
+    "الميادين"     // Al-Mayadin
+        };
 
             // 2. ComboBox leeren
             cbCity.Items.Clear();
@@ -139,10 +163,35 @@ namespace Schools
             // 4. Optional: Standardauswahl festlegen
             if (cbCity.Items.Count > 0)
             {
-                cbCity.SelectedIndex = 0; // Wählt die erste Stadt in der Liste aus
+                cbCity.SelectedIndex = -1; // Wählt die erste Stadt in der Liste aus
             }
         }
 
+        private void _FillComoBoxJobType()
+        {
+            List<string> JobTyps = new List<string>()
+            {
+                "المعلم",                       // Lehrer
+                "المدير",                      // Direktor
+                "السكرتير",                    // Sekretär
+                "أمين المكتبة",                // Bibliothekar
+                "المشرف",                      // Aufsichtsperson
+                "موظف الدعم الفني",            // IT-Administrator
+                "عامل النظافة",                // Hausmeister / Reinigungskraft
+                "الأخصائي الاجتماعي المدرسي",  // Schulsozialarbeiter
+                "المرشد النفسي",               // Schulpsychologe
+                "مساعد تدريس"
+                };// Unterrichtsassistent
+
+            cbJobTyp.Items.Clear();
+            foreach (string jobtyp in JobTyps)
+            {
+                cbJobTyp.Items.Add(jobtyp);
+            }
+
+            cbJobTyp.SelectedIndex = -1;
+        }
+    
         private void dgvTeachers_DoubleClick(object sender, EventArgs e)
         {
             _ResetDefaultValue(); //reset the values
@@ -236,7 +285,7 @@ namespace Schools
             }
             int? employeeID = null;
             // If the student was not added
-            if (!clsالموظفون.AddNewالموظفون(ref employeeID, _persons.معرّف_الشخص, "معلم", DateTime.Now, true, null))
+            if (!clsالموظفون.AddNewالموظفون(ref employeeID, _persons.معرّف_الشخص, cbJobTyp.Text, DateTime.Now, chbAktive.Checked, null))
             {
                 MessageBox.Show("فشل في إضافة المعلم. الرجاء المحاولة مرة أخرى.", "خطأ",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -279,7 +328,6 @@ namespace Schools
 
             if (warningMessage &&  clsالموظفون.Deleteالموظفون(emplyeeID))
             {
-                MessageBox.Show("تم حذف المعلم بنجاح!", "تم الحذف بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetDefaultValue();
                 _LoadAllStudentFromDatabase();
             }
@@ -287,6 +335,11 @@ namespace Schools
             {
                 MessageBox.Show("حدث خطأ أثناء حذف المعلم. الرجاء المحاولة مرة أخرى.", "فشل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
