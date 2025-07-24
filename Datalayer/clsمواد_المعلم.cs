@@ -13,7 +13,7 @@ namespace SchoolsDb_DataLayer
     {
         //#nullable enable
 
-        public static bool Getمواد_المعلمInfoByID(int? معرّف_مادة_المعلم , ref int? معرّف_المعلم, ref int? معرّف_المادة)
+        public static bool Getمواد_المعلمInfoByID(int? معرّف_مادة_المعلم , ref int? معرّف_المعلم, ref string المادة)
 {
     bool isFound = false;
 
@@ -39,7 +39,7 @@ namespace SchoolsDb_DataLayer
                         isFound = true;
 
                                 معرّف_المعلم = (int)reader["معرّف_المعلم"];
-                                معرّف_المادة = (int)reader["معرّف_المادة"];
+                                المادة = (string)reader["المادة"];
 
                     }
                 }
@@ -90,7 +90,7 @@ namespace SchoolsDb_DataLayer
     return dt;
 }
 
-        public static int? AddNewمواد_المعلم(int? معرّف_المعلم, int? معرّف_المادة)
+        public static int? AddNewمواد_المعلم(int? معرّف_المعلم, string المادة)
     {
         int? معرّف_مادة_المعلم = null;
 
@@ -105,7 +105,7 @@ namespace SchoolsDb_DataLayer
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@معرّف_المعلم", معرّف_المعلم);
-                    command.Parameters.AddWithValue("@معرّف_المادة", معرّف_المادة);
+                    command.Parameters.AddWithValue("@المادة", المادة);
 
 
                     SqlParameter outputIdParam = new SqlParameter("@NewID", SqlDbType.Int)
@@ -135,7 +135,7 @@ namespace SchoolsDb_DataLayer
         return معرّف_مادة_المعلم;
     }
 
-        public static bool Updateمواد_المعلمByID(int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معرّف_المادة)
+        public static bool Updateمواد_المعلمByID(int? معرّف_مادة_المعلم, int? معرّف_المعلم, string المادة)
 {
     int rowsAffected = 0;
 
@@ -152,7 +152,7 @@ namespace SchoolsDb_DataLayer
                 // Create the parameters for the stored procedure
                     command.Parameters.AddWithValue("@معرّف_مادة_المعلم", معرّف_مادة_المعلم);
                     command.Parameters.AddWithValue("@معرّف_المعلم", معرّف_المعلم);
-                    command.Parameters.AddWithValue("@معرّف_المادة", معرّف_المادة);
+                    command.Parameters.AddWithValue("@المادة", المادة);
 
 
                 // Open the connection and execute the update

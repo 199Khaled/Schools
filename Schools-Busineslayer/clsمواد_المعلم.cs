@@ -15,7 +15,7 @@ namespace SchoolsDb_BusinessLayer
         public int? معرّف_مادة_المعلم { get; set; }
         public int? معرّف_المعلم { get; set; }
         public clsالموظفون الموظفونInfo { get; set; }
-        public int? معرّف_المادة { get; set; }
+        public string معرّف_المادة { get; set; }
         public clsالمواد الموادInfo { get; set; }
 
 
@@ -23,32 +23,30 @@ namespace SchoolsDb_BusinessLayer
         {
             this.معرّف_مادة_المعلم = null;
             this.معرّف_المعلم = 0;
-            this.معرّف_المادة = 0;
+            this.معرّف_المادة = "";
             Mode = enMode.AddNew;
         }
 
 
         private clsمواد_المعلم(
-int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معرّف_المادة)        {
+int? معرّف_مادة_المعلم, int? معرّف_المعلم, string معرّف_المادة)        {
             this.معرّف_مادة_المعلم = معرّف_مادة_المعلم;
             this.معرّف_المعلم = معرّف_المعلم;
             this.الموظفونInfo = clsالموظفون.FindByمعرّف_الموظف(معرّف_المعلم);
             this.معرّف_المادة = معرّف_المادة;
-            this.الموادInfo = clsالمواد.FindByمعرّف_المادة(معرّف_المادة);
             Mode = enMode.Update;
         }
 
 
-       private bool _AddNewمواد_المعلم()
+       private bool _AddNewمواد_المعلم(int? معرّف_المعلم)
        {
-        this.معرّف_مادة_المعلم = clsمواد_المعلمData.AddNewمواد_المعلم(
-this.معرّف_المعلم, this.معرّف_المادة);
+        this.معرّف_مادة_المعلم = clsمواد_المعلمData.AddNewمواد_المعلم(معرّف_المعلم, this.معرّف_المادة);
         return (this.معرّف_مادة_المعلم != null);
        }
 
 
        public static bool AddNewمواد_المعلم(
-ref int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معرّف_المادة)        {
+ref int? معرّف_مادة_المعلم, int? معرّف_المعلم, string معرّف_المادة)        {
         معرّف_مادة_المعلم = clsمواد_المعلمData.AddNewمواد_المعلم(
 معرّف_المعلم, معرّف_المادة);
 
@@ -65,7 +63,7 @@ this.معرّف_مادة_المعلم, this.معرّف_المعلم, this.معر
 
 
        public static bool Updateمواد_المعلمByID(
-int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معرّف_المادة)        {
+int? معرّف_مادة_المعلم, int? معرّف_المعلم, string معرّف_المادة)        {
         return clsمواد_المعلمData.Updateمواد_المعلمByID(
 معرّف_مادة_المعلم, معرّف_المعلم, معرّف_المادة);
 
@@ -80,7 +78,7 @@ int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معر
                 return null;
             }
             int? معرّف_المعلم = 0;
-            int? معرّف_المادة = 0;
+            string معرّف_المادة = "";
             bool IsFound = clsمواد_المعلمData.Getمواد_المعلمInfoByID(معرّف_مادة_المعلم,
  ref معرّف_المعلم,  ref معرّف_المادة);
 
@@ -101,12 +99,12 @@ int? معرّف_مادة_المعلم, int? معرّف_المعلم, int? معر
 
 
 
-        public bool Save()
+        public bool Save(int? معرّف_المعلم)
         {
             switch (Mode)
             {
                 case enMode.AddNew:
-                    if(_AddNewمواد_المعلم())
+                    if(_AddNewمواد_المعلم(معرّف_المعلم))
                     {
                         Mode = enMode.Update;
                          return true;

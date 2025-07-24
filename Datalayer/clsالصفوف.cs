@@ -13,20 +13,19 @@ namespace SchoolsDb_DataLayer
     {
         //#nullable enable
 
-        public static bool GetالصفوفInfoByClassRoomName(ref int? معرّف_الصف, string اسم_الصف, ref string المستوى_الصفّي)
-        {
+        public static bool GetالصفوفInfoByClassRoomName(ref int? معرّف_الصف, string اسم_الصف)
+        { 
             bool isFound = false;
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Select * from الصفوف where اسم_الصف@ = اسم_الصف ";
+                    string query = @"SELECT * FROM الصفوف WHERE اسم_الصف = @اسم_الصف";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-
+                       
                         // Ensure correct parameter assignment
                         command.Parameters.AddWithValue("@اسم_الصف", اسم_الصف ?? (object)DBNull.Value);
 
@@ -39,8 +38,6 @@ namespace SchoolsDb_DataLayer
                                 isFound = true;
 
                                 معرّف_الصف = (int)reader["معرّف_الصف"];
-                                المستوى_الصفّي = (string)reader["المستوى_الصفّي"];
-
                             }
                         }
                     }
@@ -55,7 +52,7 @@ namespace SchoolsDb_DataLayer
             return isFound;
         }
 
-        public static bool GetالصفوفInfoByID(int? معرّف_الصف , ref string اسم_الصف, ref string المستوى_الصفّي)
+        public static bool GetالصفوفInfoByID(int? معرّف_الصف , ref string اسم_الصف )
 {
     bool isFound = false;
 
@@ -81,8 +78,7 @@ namespace SchoolsDb_DataLayer
                         isFound = true;
 
                                 اسم_الصف = (string)reader["اسم_الصف"];
-                                المستوى_الصفّي = (string)reader["المستوى_الصفّي"];
-
+                          
                     }
                 }
             }
@@ -134,7 +130,7 @@ namespace SchoolsDb_DataLayer
     return dt;
 }
 
-        public static int? AddNewالصفوف(string اسم_الصف, string المستوى_الصفّي)
+        public static int? AddNewالصفوف(string اسم_الصف)
     {
         int? معرّف_الصف = null;
 
@@ -149,9 +145,7 @@ namespace SchoolsDb_DataLayer
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@اسم_الصف", اسم_الصف);
-                    command.Parameters.AddWithValue("@المستوى_الصفّي", المستوى_الصفّي);
-
-
+          
                     SqlParameter outputIdParam = new SqlParameter("@NewID", SqlDbType.Int)
                     {
                         Direction = ParameterDirection.Output
@@ -179,7 +173,7 @@ namespace SchoolsDb_DataLayer
         return معرّف_الصف;
     }
 
-        public static bool UpdateالصفوفByID(int? معرّف_الصف, string اسم_الصف, string المستوى_الصفّي)
+        public static bool UpdateالصفوفByID(int? معرّف_الصف, string اسم_الصف )
 {
     int rowsAffected = 0;
 
@@ -196,7 +190,6 @@ namespace SchoolsDb_DataLayer
                 // Create the parameters for the stored procedure
                     command.Parameters.AddWithValue("@معرّف_الصف", معرّف_الصف);
                     command.Parameters.AddWithValue("@اسم_الصف", اسم_الصف);
-                    command.Parameters.AddWithValue("@المستوى_الصفّي", المستوى_الصفّي);
 
 
                 // Open the connection and execute the update

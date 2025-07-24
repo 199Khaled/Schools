@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace Schools
         enMode _Mode;
 
         clsالأشخاص _persons;
+        clsالموظفون _employees;
         BindingSource _bindingSource;
         public frmTeacherForm()
         {
@@ -58,6 +60,19 @@ namespace Schools
             txtEmail.Clear();
             txtPhone.Clear();
             dtpDateOfBirth.Value = DateTime.Now;
+            txtContractFinisched.Clear();
+
+            txtFirstname.FillColor = Color.White;
+            errorProvider1.SetError(txtFirstname, null);
+            txtLastname.FillColor = Color.White;
+            errorProvider1.SetError(txtLastname, null);
+
+            cbCity.FillColor = Color.White;
+            errorProvider1.SetError(cbCity, null);
+            cbGender.FillColor = Color.White;
+            errorProvider1.SetError(cbGender, null);
+            cbJobTyp.FillColor = Color.White;
+            errorProvider1.SetError(cbJobTyp, null);
         }
 
         private bool _IsInputValid(Guna2TextBox textname, string message)
@@ -75,12 +90,31 @@ namespace Schools
                 return true;
             }
         }
+        bool _IsInputValidForComboBox(Guna2ComboBox comboBox  , string errorMessage)
+        {
+            if (comboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(comboBox, errorMessage);
+                comboBox.FillColor= Color.LightPink;
+     
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(comboBox, null);
+                comboBox.FillColor= Color.White;
 
+                return true;
+            }
+        }
         private bool _CheckInput()
         {
             bool isValid = true;
-            isValid &= _IsInputValid(txtFirstname, "لا يمكن أن يكون الاسم الأول فارغًا!");
-            isValid &= _IsInputValid(txtLastname, "لا يمكن أن يكون اسم العائلة فارغًا!");
+            isValid &= _IsInputValid(txtFirstname, "الرجاء إدخال الاسم الأول!");
+            isValid &= _IsInputValid(txtLastname, "الرجاء إدخال اسم العائلة!");
+            isValid &= _IsInputValidForComboBox(cbCity, "الرجاء اختيار المدينة!");
+            isValid &= _IsInputValidForComboBox(cbGender, "الرجاء اختيار الجنس!");
+            isValid &= _IsInputValidForComboBox(cbJobTyp, "الرجاء اختيار نوع الوظيفة!");
 
             return isValid;
         }
@@ -106,13 +140,18 @@ namespace Schools
             txtPhone.Text = _persons.الهاتف;
             txtEmail.Text = _persons.البريد_الإلكتروني;
 
-            clsالموظفون employees = clsالموظفون.FindByمعرّف_الشخص(_persons.معرّف_الشخص);
-            chbAktive.Checked = Convert.ToBoolean(employees.نشط);
+            _employees = clsالموظفون.FindByمعرّف_الشخص(_persons.معرّف_الشخص);
+            cbJobTyp.Text = _employees.النوع; 
+            chbAktive.Checked = Convert.ToBoolean(_employees.نشط);
+            txtContractFinisched.Text = _employees.تاريخ_الإنهاء;
         }
         private void _FillPersonData()
         {
             if (_Mode == enMode.AddNew)
+            {
                 _persons = new clsالأشخاص();
+                _employees = new clsالموظفون();
+            }
 
             _persons.الاسم_الأول = txtFirstname.Text;
             _persons.اسم_الأب = txtFathername.Text;
@@ -123,7 +162,24 @@ namespace Schools
             _persons.المدينة= cbCity.Text;
             _persons.الهاتف = txtPhone.Text;
             _persons.البريد_الإلكتروني = txtEmail.Text;
+
+            //Fille EmployeesData
+
+            if (_Mode == enMode.AddNew)
+            {
+                _employees = new clsالموظفون();
+                _employees.تاريخ_التوظيف = DateTime.Now;
+            }
+            _employees.النوع = cbJobTyp.Text.Trim();
+            if (!string.IsNullOrEmpty(txtContractFinisched.Text))
+            {
+                _employees.تاريخ_الإنهاء = txtContractFinisched.Text.Trim();
+                _employees.نشط = false;
+            }
+            else
+                _employees.نشط = chbAktive.Checked;
         }
+
 
         private void _FillComboBoxCity()
         {
@@ -215,6 +271,9 @@ namespace Schools
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
+            if (cbFilterby.SelectedIndex == -1)
+                return;
+
             if (!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "معرّف_الموظف" && !_IsNumber(txtFilterValue.Text))
             {
                 MessageBox.Show("إدخال غير صالح، الرجاء إدخال رقم");
@@ -277,21 +336,12 @@ namespace Schools
                 return;
             }
             //in case Update Mode 
-            if (_Mode == enMode.Update)
+            if(!_employees.Save(_persons.معرّف_الشخص))
             {
-                _LoadAllStudentFromDatabase();
-                _ResetDefaultValue();
+                MessageBox.Show("فشلت عملية الحفظ للموظف. الرجاء المحاولة مرة أخرى.", "خطأ",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int? employeeID = null;
-            // If the student was not added
-            if (!clsالموظفون.AddNewالموظفون(ref employeeID, _persons.معرّف_الشخص, cbJobTyp.Text, DateTime.Now, chbAktive.Checked, null))
-            {
-                MessageBox.Show("فشل في إضافة المعلم. الرجاء المحاولة مرة أخرى.", "خطأ",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             //in case everthing is good
             _Mode = enMode.Update;
             _LoadAllStudentFromDatabase();
@@ -340,6 +390,15 @@ namespace Schools
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddTeacherSubject_Click(object sender, EventArgs e)
+        {
+            using (frmAddUpdateSubjects frm = new frmAddUpdateSubjects())
+            {
+                frm.ShowDialog();
+                                         
+            }
         }
     }
 }

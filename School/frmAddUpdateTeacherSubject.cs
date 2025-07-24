@@ -45,6 +45,8 @@ namespace Schools
             txtVollname.Clear();
             cbFilterby.SelectedIndex = -1;
             cbSubjects.SelectedIndex = -1;
+
+            
         }
         
         private void _LoadData(clsمواد_المعلم teacherSubjects)
@@ -56,7 +58,7 @@ namespace Schools
             _teacherSubjects = teacherSubjects;
             txtTeacherID.Text = teacherSubjects.معرّف_المعلم.ToString();  //TeacherID is equall EmployeeID for Teacher 
             txtVollname.Text = clsالموظفون.FindByمعرّف_الموظف(_teacherSubjects.معرّف_المعلم).الأشخاصInfo.الاسم_الكامل;
-            cbSubjects.Text = _teacherSubjects.الموادInfo.اسم_المادة;
+            cbSubjects.Text = _teacherSubjects.معرّف_المادة;
         }
 
         private bool _IsInputValid(Guna2TextBox textname, string message)
@@ -79,7 +81,7 @@ namespace Schools
         {
             if (cbSubjects.SelectedIndex == -1)
             {
-                errorProvider1.SetError(cbSubjects, "لا يمكن ترك حقل المادة فارغًا!");
+                errorProvider1.SetError(cbSubjects, "الرجاء اختيار المادة!");
                 cbSubjects.FillColor = Color.LightPink;
                 return false; ;
             }
@@ -93,9 +95,8 @@ namespace Schools
         private bool _CheckFilledDate()
         {
             bool Valid = true;
-
-            Valid &= _IsInputValid(txtTeacherID, "لا يمكن ترك رقم المعلم فارغًا!");
-            Valid &= _IsInputValid(txtVollname, "لا يمكن ترك اسم المعلم فارغًا!");
+            Valid &= _IsInputValid(txtTeacherID, "الرجاء إدخال رقم المعلم!");
+            Valid &= _IsInputValid(txtVollname, "الرجاء إدخال اسم المعلم!");
             Valid &= _IsSubjectSelected();
          
             return Valid;
@@ -109,22 +110,23 @@ namespace Schools
                 _teacherSubjects = new clsمواد_المعلم();
 
             _teacherSubjects.معرّف_المعلم = Convert.ToInt32(txtTeacherID.Text.Trim());
-            _teacherSubjects.معرّف_المادة = clsالمواد.FindByاسم_المادة(cbSubjects.Text).معرّف_المادة;
-
+            _teacherSubjects.معرّف_المادة = cbSubjects.Text.Trim();
             return true;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             _ResetDefaultValue();     
         }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!_FillTeacherSubjectData())
                 return;//fill the teacher Subject Data
 
+
+            int معرّف_المعلم = Convert.ToInt32(txtTeacherID.Text.Trim());
             //if the person was not added
-            if (!_teacherSubjects.Save())
+            if (!_teacherSubjects.Save(معرّف_المعلم))
             {
                 MessageBox.Show("فشلت عملية الحفظ. الرجاء المحاولة مرة أخرى.", "خطأ",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,17 +143,41 @@ namespace Schools
             _ResetDefaultValue();
             _LoadTeacherSubjectDataFromDatabase();
             _FillSubjectComboBoxWithData();
+
         }
         
         private void _FillSubjectComboBoxWithData()
         {
-            DataTable dt = clsالمواد.GetAllالمواد();
+            List<string> subjects = new List<string>()
+      {
+    "الرياضيات",
+    "اللغة العربية",
+    "اللغة الإنجليزية",
+    "الفيزياء",
+    "الكيمياء",
+    "الأحياء",
+    "التاريخ",
+    "الجغرافيا",
+    "العلوم العامة",
+    "التربية الإسلامية",
+    "الحاسوب",
+    "الفنون",
+    "التربية الرياضية",
+    "الاقتصاد المنزلي",
+    "اللغة الفرنسية",
+    "الموسيقى",
+    "التكنولوجيا",
+    "العلوم الاجتماعية",
+    "التربية الوطنية",
+    "الفلسفة"
+     };
 
             cbSubjects.Items.Clear();
-            foreach(DataRow row in dt.Rows)
+            foreach (string subject in subjects)
             {
-                cbSubjects.Items.Add(row["اسم_المادة"]);
+                cbSubjects.Items.Add(subject);
             }
+            cbSubjects.SelectedIndex = -1;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -175,13 +201,21 @@ namespace Schools
         private void txtTeacherID_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTeacherID.Text))
+            {
                 txtVollname.Clear();
+                cbSubjects.SelectedIndex = -1;
+            }
+             
         }
 
         private void txtVollname_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtVollname.Text))
+            {
+
                 txtTeacherID.Clear();
+                cbSubjects.SelectedIndex = -1;
+            }
         }
 
         private void cbFilterby_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,7 +234,7 @@ namespace Schools
 
             if (!string.IsNullOrEmpty(filterValue))
             {
-                if ((filterColumn == "TeacherID" || filterColumn == "معرّف_المادة") && _IsNumber(filterValue))
+                if (filterColumn == "معرّف_المعلم" && _IsNumber(filterValue))
                     _bindingSource.Filter = $"{filterColumn} = {filterValue}";
                 
             }
@@ -258,5 +292,6 @@ namespace Schools
                 MessageBox.Show("حدث خطأ أثناء حذف مادة المعلم. الرجاء المحاولة مرة أخرى.", "فشل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

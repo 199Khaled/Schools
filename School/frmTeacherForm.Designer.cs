@@ -29,17 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbEmployeesInfo = new System.Windows.Forms.GroupBox();
+            this.btnAddTeacherSubject = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtContractFinisched = new Guna.UI2.WinForms.Guna2TextBox();
+            this.chbAktive = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbJobTyp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMothername = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFathername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFirstname = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,15 +68,11 @@
             this.cbFilterby = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvTeachers = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbJobTyp = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.chbAktive = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbEmployeesInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -84,54 +87,165 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(557, 19);
+            this.label9.Location = new System.Drawing.Point(599, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 0;
             this.label9.Text = "الموظفون";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
+            // gbEmployeesInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbEmployeesInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.chbAktive);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.cbJobTyp);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtMothername);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtFathername);
-            this.groupBox1.Controls.Add(this.txtFirstname);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtLastname);
-            this.groupBox1.Controls.Add(this.cbCity);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.dtpDateOfBirth);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.cbGender);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 77);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(1222, 329);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "معلومات الموظفون";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbEmployeesInfo.Controls.Add(this.btnAddTeacherSubject);
+            this.gbEmployeesInfo.Controls.Add(this.label13);
+            this.gbEmployeesInfo.Controls.Add(this.txtContractFinisched);
+            this.gbEmployeesInfo.Controls.Add(this.chbAktive);
+            this.gbEmployeesInfo.Controls.Add(this.label12);
+            this.gbEmployeesInfo.Controls.Add(this.cbJobTyp);
+            this.gbEmployeesInfo.Controls.Add(this.label11);
+            this.gbEmployeesInfo.Controls.Add(this.txtMothername);
+            this.gbEmployeesInfo.Controls.Add(this.label10);
+            this.gbEmployeesInfo.Controls.Add(this.txtFathername);
+            this.gbEmployeesInfo.Controls.Add(this.txtFirstname);
+            this.gbEmployeesInfo.Controls.Add(this.btnSave);
+            this.gbEmployeesInfo.Controls.Add(this.pictureBox1);
+            this.gbEmployeesInfo.Controls.Add(this.label1);
+            this.gbEmployeesInfo.Controls.Add(this.btnDelete);
+            this.gbEmployeesInfo.Controls.Add(this.label2);
+            this.gbEmployeesInfo.Controls.Add(this.btnCancel);
+            this.gbEmployeesInfo.Controls.Add(this.label3);
+            this.gbEmployeesInfo.Controls.Add(this.label4);
+            this.gbEmployeesInfo.Controls.Add(this.label5);
+            this.gbEmployeesInfo.Controls.Add(this.label6);
+            this.gbEmployeesInfo.Controls.Add(this.label7);
+            this.gbEmployeesInfo.Controls.Add(this.txtLastname);
+            this.gbEmployeesInfo.Controls.Add(this.cbCity);
+            this.gbEmployeesInfo.Controls.Add(this.txtPhone);
+            this.gbEmployeesInfo.Controls.Add(this.dtpDateOfBirth);
+            this.gbEmployeesInfo.Controls.Add(this.txtEmail);
+            this.gbEmployeesInfo.Controls.Add(this.cbGender);
+            this.gbEmployeesInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEmployeesInfo.Location = new System.Drawing.Point(8, 77);
+            this.gbEmployeesInfo.Name = "gbEmployeesInfo";
+            this.gbEmployeesInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gbEmployeesInfo.Size = new System.Drawing.Size(1222, 329);
+            this.gbEmployeesInfo.TabIndex = 41;
+            this.gbEmployeesInfo.TabStop = false;
+            this.gbEmployeesInfo.Text = "معلومات الموظفون";
+            this.gbEmployeesInfo.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnAddTeacherSubject
+            // 
+            this.btnAddTeacherSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTeacherSubject.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddTeacherSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTeacherSubject.ForeColor = System.Drawing.Color.Black;
+            this.btnAddTeacherSubject.Location = new System.Drawing.Point(358, 270);
+            this.btnAddTeacherSubject.Name = "btnAddTeacherSubject";
+            this.btnAddTeacherSubject.Size = new System.Drawing.Size(136, 46);
+            this.btnAddTeacherSubject.TabIndex = 52;
+            this.btnAddTeacherSubject.Text = "إضافة مواد المعلّم";
+            this.btnAddTeacherSubject.UseVisualStyleBackColor = false;
+            this.btnAddTeacherSubject.Click += new System.EventHandler(this.btnAddTeacherSubject_Click);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1118, 283);
+            this.label13.Name = "label13";
+            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label13.Size = new System.Drawing.Size(102, 20);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "\tتاريخ انتهاء العقد:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.UseWaitCursor = true;
+            // 
+            // txtContractFinisched
+            // 
+            this.txtContractFinisched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContractFinisched.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContractFinisched.DefaultText = "";
+            this.txtContractFinisched.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtContractFinisched.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtContractFinisched.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContractFinisched.DisabledState.Parent = this.txtContractFinisched;
+            this.txtContractFinisched.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContractFinisched.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContractFinisched.FocusedState.Parent = this.txtContractFinisched;
+            this.txtContractFinisched.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContractFinisched.ForeColor = System.Drawing.Color.Black;
+            this.txtContractFinisched.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContractFinisched.HoverState.Parent = this.txtContractFinisched;
+            this.txtContractFinisched.Location = new System.Drawing.Point(874, 270);
+            this.txtContractFinisched.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtContractFinisched.Name = "txtContractFinisched";
+            this.txtContractFinisched.PasswordChar = '\0';
+            this.txtContractFinisched.PlaceholderText = "";
+            this.txtContractFinisched.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtContractFinisched.SelectedText = "";
+            this.txtContractFinisched.ShadowDecoration.Parent = this.txtContractFinisched;
+            this.txtContractFinisched.Size = new System.Drawing.Size(226, 38);
+            this.txtContractFinisched.TabIndex = 50;
+            // 
+            // chbAktive
+            // 
+            this.chbAktive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAktive.AutoSize = true;
+            this.chbAktive.BackColor = System.Drawing.Color.Transparent;
+            this.chbAktive.Checked = true;
+            this.chbAktive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbAktive.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbAktive.ForeColor = System.Drawing.Color.Red;
+            this.chbAktive.Location = new System.Drawing.Point(416, 32);
+            this.chbAktive.Name = "chbAktive";
+            this.chbAktive.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chbAktive.Size = new System.Drawing.Size(72, 35);
+            this.chbAktive.TabIndex = 49;
+            this.chbAktive.Text = "نشط";
+            this.chbAktive.UseVisualStyleBackColor = false;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(757, 182);
+            this.label12.Name = "label12";
+            this.label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label12.Size = new System.Drawing.Size(72, 20);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "نوع الوظيفة";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbJobTyp
+            // 
+            this.cbJobTyp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbJobTyp.BackColor = System.Drawing.Color.Transparent;
+            this.cbJobTyp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbJobTyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbJobTyp.FocusedColor = System.Drawing.Color.Empty;
+            this.cbJobTyp.FocusedState.Parent = this.cbJobTyp;
+            this.cbJobTyp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJobTyp.ForeColor = System.Drawing.Color.Black;
+            this.cbJobTyp.FormattingEnabled = true;
+            this.cbJobTyp.HoverState.Parent = this.cbJobTyp;
+            this.cbJobTyp.ItemHeight = 30;
+            this.cbJobTyp.ItemsAppearance.Parent = this.cbJobTyp;
+            this.cbJobTyp.Location = new System.Drawing.Point(523, 174);
+            this.cbJobTyp.Name = "cbJobTyp";
+            this.cbJobTyp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbJobTyp.ShadowDecoration.Parent = this.cbJobTyp;
+            this.cbJobTyp.Size = new System.Drawing.Size(225, 36);
+            this.cbJobTyp.TabIndex = 47;
+            this.cbJobTyp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -246,13 +360,24 @@
             this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(734, 268);
+            this.btnSave.Location = new System.Drawing.Point(525, 270);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(121, 46);
+            this.btnSave.Size = new System.Drawing.Size(77, 46);
             this.btnSave.TabIndex = 33;
             this.btnSave.Text = "حفظ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Image = global::Schools.Properties.Resources.Employees;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -273,9 +398,9 @@
             this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(988, 268);
+            this.btnDelete.Location = new System.Drawing.Point(691, 270);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(121, 46);
+            this.btnDelete.Size = new System.Drawing.Size(77, 46);
             this.btnDelete.TabIndex = 35;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -300,9 +425,9 @@
             this.btnCancel.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(861, 268);
+            this.btnCancel.Location = new System.Drawing.Point(608, 270);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(121, 46);
+            this.btnCancel.Size = new System.Drawing.Size(77, 46);
             this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "إلغاء";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -438,7 +563,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.HoverState.Parent = this.txtPhone;
-            this.txtPhone.Location = new System.Drawing.Point(523, 218);
+            this.txtPhone.Location = new System.Drawing.Point(522, 218);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
@@ -605,23 +730,23 @@
             this.dgvTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTeachers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvTeachers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeachers.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeachers.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTeachers.EnableHeadersVisualStyles = false;
             this.dgvTeachers.Location = new System.Drawing.Point(24, 504);
             this.dgvTeachers.MultiSelect = false;
@@ -638,70 +763,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Schools.Properties.Resources.Employees;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(403, 266);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(757, 182);
-            this.label12.Name = "label12";
-            this.label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label12.Size = new System.Drawing.Size(72, 20);
-            this.label12.TabIndex = 48;
-            this.label12.Text = "نوع الوظيفة";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cbJobTyp
-            // 
-            this.cbJobTyp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbJobTyp.BackColor = System.Drawing.Color.Transparent;
-            this.cbJobTyp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbJobTyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbJobTyp.FocusedColor = System.Drawing.Color.Empty;
-            this.cbJobTyp.FocusedState.Parent = this.cbJobTyp;
-            this.cbJobTyp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbJobTyp.ForeColor = System.Drawing.Color.Black;
-            this.cbJobTyp.FormattingEnabled = true;
-            this.cbJobTyp.HoverState.Parent = this.cbJobTyp;
-            this.cbJobTyp.ItemHeight = 30;
-            this.cbJobTyp.ItemsAppearance.Parent = this.cbJobTyp;
-            this.cbJobTyp.Location = new System.Drawing.Point(523, 174);
-            this.cbJobTyp.Name = "cbJobTyp";
-            this.cbJobTyp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbJobTyp.ShadowDecoration.Parent = this.cbJobTyp;
-            this.cbJobTyp.Size = new System.Drawing.Size(225, 36);
-            this.cbJobTyp.TabIndex = 47;
-            this.cbJobTyp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // chbAktive
-            // 
-            this.chbAktive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbAktive.AutoSize = true;
-            this.chbAktive.BackColor = System.Drawing.Color.Transparent;
-            this.chbAktive.Checked = true;
-            this.chbAktive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbAktive.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAktive.ForeColor = System.Drawing.Color.Red;
-            this.chbAktive.Location = new System.Drawing.Point(525, 276);
-            this.chbAktive.Name = "chbAktive";
-            this.chbAktive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chbAktive.Size = new System.Drawing.Size(61, 29);
-            this.chbAktive.TabIndex = 49;
-            this.chbAktive.Text = "نشط";
-            this.chbAktive.UseVisualStyleBackColor = false;
-            // 
             // frmTeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,7 +773,7 @@
             this.Controls.Add(this.cbFilterby);
             this.Controls.Add(this.dgvTeachers);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbEmployeesInfo);
             this.Controls.Add(this.panel2);
             this.Name = "frmTeacherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -720,11 +781,11 @@
             this.Load += new System.EventHandler(this.frmTeacherForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbEmployeesInfo.ResumeLayout(false);
+            this.gbEmployeesInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeachers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,7 +795,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbEmployeesInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
@@ -766,5 +827,8 @@
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2ComboBox cbJobTyp;
         private System.Windows.Forms.CheckBox chbAktive;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2TextBox txtContractFinisched;
+        private System.Windows.Forms.Button btnAddTeacherSubject;
     }
 }

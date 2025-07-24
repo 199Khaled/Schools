@@ -13,13 +13,14 @@ using System.Windows.Forms;
 
 namespace Schools
 {
-    public partial class frmStudentsForm: Form
+    public partial class frmStudentsForm : Form
     {
         public enum enMode { AddNew = 1, Update = 2 };
         enMode _Mode;
 
 
         clsالأشخاص _persons;
+        clsالطلاب _students;
         BindingSource _bindingSource;
         public frmStudentsForm()
         {
@@ -44,18 +45,36 @@ namespace Schools
 
             _LoadAllStudentFromDatabase();
             _FillComboBoxCity();
+            _FillClassnameWithDaten();
         }
         private void _ResetDefaultValue()
         {
             _Mode = enMode.AddNew;//at first we set the mode  to addnew
 
             txtFirstname.Clear();
+            txtFathername.Clear();
+            txtMothername.Clear();
             txtLastname.Clear();
             cbGender.SelectedIndex = -1;
             txtEmail.Clear();
             txtPhone.Clear();
             cbCity.SelectedIndex = -1;
+            cbClassname.SelectedIndex = -1;
             dtpDateOfBirth.Value = DateTime.Now;
+
+            txtFirstname.FillColor = Color.White;
+            errorProvider1.SetError(txtFirstname, null);
+            txtLastname.FillColor = Color.White;
+            errorProvider1.SetError(txtLastname, null);
+
+            cbCity.FillColor = Color.White;
+            errorProvider1.SetError(cbCity, null);
+
+            cbGender.FillColor = Color.White;
+            errorProvider1.SetError(cbGender, null);
+
+            cbClassname.FillColor = Color.White;
+            errorProvider1.SetError(cbClassname, null);
         }
 
         private bool _IsInputValid(Guna2TextBox textname, string message)
@@ -73,18 +92,38 @@ namespace Schools
                 return true;
             }
         }
+        bool _IsInputValidForComboBox(Guna2ComboBox comboBox, string errorMessage)
+        {
+            if (comboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(comboBox, errorMessage);
+                comboBox.FillColor= Color.LightPink;
 
+                return false;
+            }
+            else
+            {
+                errorProvider1.SetError(comboBox, null);
+                comboBox.FillColor= Color.White;
+
+                return true;
+            }
+        }
         private bool _CheckInput()
         {
             bool isValid = true;
-            isValid &= _IsInputValid(txtFirstname, "لا يمكن أن يكون الاسم الأول فارغًا!");
-            isValid &= _IsInputValid(txtLastname, "لا يمكن أن يكون اسم العائلة فارغًا!");
+            isValid &= _IsInputValid(txtFirstname, "الرجاء إدخال الاسم الأول!");
+            isValid &= _IsInputValid(txtLastname, "الرجاء إدخال اسم العائلة!");
+
+            isValid &= _IsInputValidForComboBox(cbCity, "الرجاء اختيار المدينة!");
+            isValid &= _IsInputValidForComboBox(cbGender, "الرجاء اختيار الجنس!");
+            isValid &= _IsInputValidForComboBox(cbClassname, "الرجاء اختيار اسم الصف!");
 
             return isValid;
         }
         private void _LoadPersonData(clsالأشخاص persons)
         {
-           // _persons = clsPersons.FindByPersonID(_personID);
+            // _persons = clsPersons.FindByPersonID(_personID);
 
             if (persons == null)
             {
@@ -92,29 +131,47 @@ namespace Schools
                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            _persons = persons; 
+            _persons = persons;
 
             txtFirstname.Text = _persons.الاسم_الأول;
-        
+            txtFathername.Text = _persons.اسم_الأب;
+            txtMothername.Text = _persons.اسم_الأم;
             txtLastname.Text = _persons.اسم_العائلة;
             dtpDateOfBirth.Value = _persons.تاريخ_الميلاد.Value;
             cbGender.Text = _persons.الجنس;
             cbCity.Text = _persons.المدينة;
             txtPhone.Text = _persons.الهاتف;
             txtEmail.Text = _persons.البريد_الإلكتروني;
+
+            _students = clsالطلاب.FindByمعرّف_الشخص(_persons.معرّف_الشخص);
+            if (_students != null)
+                cbClassname.Text = clsالصفوف.FindByمعرّف_الصف(_students.معرّف_الصف).اسم_الصف;
         }
         private void _FillPersonData()
         {
             if (_Mode == enMode.AddNew)
+            {
                 _persons = new clsالأشخاص();
+                _students = new clsالطلاب();
+            }
 
             _persons.الاسم_الأول = txtFirstname.Text;
+            _persons.اسم_الأب = txtFathername.Text;
+            _persons.اسم_الأم = txtMothername.Text;
             _persons.اسم_العائلة = txtLastname.Text;
             _persons.تاريخ_الميلاد = dtpDateOfBirth.Value.Date;
             _persons.الجنس = cbGender.Text;
             _persons.المدينة = cbCity.Text;
             _persons.الهاتف = txtPhone.Text;
             _persons.البريد_الإلكتروني = txtEmail.Text;
+
+
+            if (_Mode == enMode.AddNew)
+            {
+                _students = new clsالطلاب();
+                _students.تاريخ_الالتحاق = DateTime.Now;
+            }
+            _students.معرّف_الصف = clsالصفوف.FindByاسم_الصف(cbClassname.Text).معرّف_الصف;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -135,16 +192,9 @@ namespace Schools
         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //in case Update Mode 
-            if (_Mode == enMode.Update)
-            {
-                _LoadAllStudentFromDatabase();
-                _ResetDefaultValue();
-                return;
-            }
-            int? studentID = null;
+          
             // If the student was not added
-            if (!clsالطلاب.AddNewالطلاب(ref studentID, _persons.معرّف_الشخص,DateTime.Now))
+            if (!_students.Save(_persons.معرّف_الشخص))
             {
                 MessageBox.Show("فشل في إضافة الطالب. الرجاء المحاولة مرة أخرى.", "خطأ",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -161,10 +211,26 @@ namespace Schools
             // 1. Liste der Städte und Gemeinden im Neckar-Odenwald-Kreis erstellen
             List<string> cities = new List<string>
         {
-        "Adelsheim","Aglasterhausen", "Billigheim","Binau","Buchen","Elztal", "Fahrenbach", "Hardheim",
-        "Haßmersheim","Höpfingen","Hüffenhardt", "Limbach","Mosbach","Mudau", "Neckargerach", "Neckarzimmern",
-        "Neunkirchen", "Obrigheim", "Osterburken",  "Ravenstein", "Rosenberg", "Schefflenz", "Schwarzach", "Seckach",
-        "Waldbrunn", "Walldürn", "Zwingenberg"};
+      "دمشق",       // Damascus
+    "حلب",        // Aleppo
+    "حمص",        // Homs
+    "حماة",        // Hama
+    "اللاذقية",    // Latakia
+    "طرطوس",       // Tartus
+    "دير الزور",   // Deir ez-Zor
+    "الرقة",       // Raqqa
+    "السويداء",    // As-Suwayda
+    "درعا",        // Daraa
+    "إدلب",        // Idlib
+    "القنيطرة",    // Quneitra
+    "الحسكة",      // Al-Hasakah
+    "ريف دمشق",    // Rural Damascus
+    "عين العرب",   // Kobane / Ayn al-Arab
+    "القامشلي",    // Qamishli
+    "تل أبيض",     // Tal Abyad
+    "منبج",        // Manbij
+    "البوكمال",    // Al-Bukamal
+    "الميادين"  };
 
             // 2. ComboBox leeren
             cbCity.Items.Clear();
@@ -181,6 +247,20 @@ namespace Schools
                 cbCity.SelectedIndex = -1; // Wählt die erste Stadt in der Liste aus
             }
         }
+
+        private void _FillClassnameWithDaten()
+        {
+            DataTable classes = clsالصفوف.GetAllالصفوف();
+
+            if(classes != null)
+            {
+                foreach(DataRow row in classes.Rows)
+                {
+                    cbClassname.Items.Add(row["اسم_الصف"]);
+                }
+            }
+            cbClassname.SelectedIndex = -1;
+        } 
 
         private void dgvStudents_DoubleClick(object sender, EventArgs e)
         {
@@ -238,7 +318,10 @@ namespace Schools
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "StudentID" && !_IsNumber(txtFilterValue.Text))
+            if (cbFilterby.SelectedIndex == -1)
+                return;
+
+            if(!string.IsNullOrEmpty(txtFilterValue.Text) && cbFilterby.Text == "معرّف_الطالب" && !_IsNumber(txtFilterValue.Text))
             {
                 MessageBox.Show("إدخال غير صالح، الرجاء إدخال رقم");
                 return;
@@ -253,7 +336,7 @@ namespace Schools
             string filterColumn = cbFilterby.Text.Trim();
             if (!string.IsNullOrEmpty(filterValue))
             {
-                if (filterColumn == "StudentID")
+                if (filterColumn == "معرّف_الطالب")
                     _bindingSource.Filter = $"{filterColumn} = {filterValue}";
                 else
                     _bindingSource.Filter = $"{filterColumn} like '{filterValue}%'";

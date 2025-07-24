@@ -46,15 +46,15 @@ int? معرّف_الموظف, int? معرّف_الشخص, string النوع, Dat
         }
 
 
-       private bool _AddNewالموظفون()
+       private bool _AddNewالموظفون(int? معرّف_الشخص)
        {
         this.معرّف_الموظف = clsالموظفونData.AddNewالموظفون(
-this.معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.نشط,this.تاريخ_الإنهاء);
+       معرّف_الشخص, this.النوع, this.تاريخ_التوظيف, this.نشط,this.تاريخ_الإنهاء);
         return (this.معرّف_الموظف != null);
        }
 
 
-       public static bool AddNewالموظفون( ref int? معرّف_الموظف, int? معرّف_الشخص, string النوع,
+       public static bool AddNewالموظفون( int? معرّف_الموظف, int? معرّف_الشخص, string النوع,
            DateTime? تاريخ_التوظيف, bool? نشط, string تاريخ_الإنهاء)      
         {
         معرّف_الموظف = clsالموظفونData.AddNewالموظفون(
@@ -134,12 +134,12 @@ int? معرّف_الموظف, int? معرّف_الشخص, string النوع, Dat
 
 
 
-        public bool Save()
+        public bool Save(int? معرّف_الشخص)
         {
             switch (Mode)
             {
                 case enMode.AddNew:
-                    if(_AddNewالموظفون())
+                    if(_AddNewالموظفون(معرّف_الشخص))
                     {
                         Mode = enMode.Update;
                          return true;

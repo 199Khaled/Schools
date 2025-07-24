@@ -13,7 +13,7 @@ namespace SchoolsDb_DataLayer
     {
         //#nullable enable
 
-        public static bool GetالطلابInfoByID(int? معرّف_الطالب , ref int? معرّف_الشخص, ref DateTime? تاريخ_الالتحاق)
+        public static bool GetالطلابInfoByID(int? معرّف_الطالب , ref int? معرّف_الشخص, ref int? معرّف_الصف, ref DateTime? تاريخ_الالتحاق)
 {
     bool isFound = false;
 
@@ -55,42 +55,112 @@ namespace SchoolsDb_DataLayer
     return isFound;
 }
 
-        public static DataTable GetAllالطلاب()
-{
-    DataTable dt = new DataTable();
 
-    try
-    {
-        using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+        public static bool GetالطلابInfoByPersonID(ref int? معرّف_الطالب, int? معرّف_الشخص, ref int? معرّف_الصف, ref DateTime? تاريخ_الالتحاق)
         {
-            string query = "SP_Get_All_الطلاب";
+            bool isFound = false;
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.CommandType = CommandType.StoredProcedure; 
-
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    if (reader.HasRows)
+                    string query = @"Select * from الطلاب where معرّف_الشخص = @معرّف_الشخص ";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        dt.Load(reader);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Ensure correct parameter assignment
+                        command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص ?? (object)DBNull.Value);
+
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The record was found
+                                isFound = true;
+
+                                معرّف_الشخص = (int)reader["معرّف_الشخص"];
+                                تاريخ_الالتحاق = reader["تاريخ_الالتحاق"] != DBNull.Value ? (DateTime?)reader["تاريخ_الالتحاق"] : null;
+
+                            }
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                // Handle all exceptions in a general way
+                ErrorHandler.HandleException(ex, nameof(GetالطلابInfoByID), $"Parameter: معرّف_الطالب = " + معرّف_الطالب);
+            }
+
+            return isFound;
         }
-    }
-    catch (Exception ex)
-    {
-        // Handle all exceptions in a general way
-        ErrorHandler.HandleException(ex, nameof(GetAllالطلاب), "No parameters for this method.");
-    }
 
-    return dt;
-}
+     
+      public static DataTable GetAllالطلاب()
+            {
+                DataTable dt = new DataTable();
 
-        public static int? AddNewالطلاب(int? معرّف_الشخص, DateTime? تاريخ_الالتحاق)
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                    {
+                        string query = @"
+SELECT 
+    الطلاب.[معرّف_الطالب]             AS [معرّف_الطالب],
+    
+    CASE 
+        WHEN الأشخاص.[اسم_الأب] IS NULL OR الأشخاص.[اسم_الأب] = ''
+            THEN الأشخاص.[الاسم_الأول] + ' ' + الأشخاص.[اسم_العائلة]
+        ELSE 
+            الأشخاص.[الاسم_الأول] + ' ' + الأشخاص.[اسم_الأب] + ' ' + الأشخاص.[اسم_العائلة]
+    END AS [الاسم_الكامل],
+
+    الأشخاص.[تاريخ_الميلاد]          AS [تاريخ الميلاد],
+    الأشخاص.[الجنس]                 AS [الجنس],
+    الأشخاص.[المدينة]               AS [المدينة],
+    الأشخاص.[الهاتف]               AS [الهاتف],
+    الأشخاص.[البريد_الإلكتروني]     AS [البريد الإلكتروني],
+
+    الصفوف.[اسم_الصف]               AS [اسم الصف],
+    الطلاب.[تاريخ_الالتحاق]          AS [تاريخ الالتحاق]
+
+FROM 
+    الطلاب
+INNER JOIN 
+    الأشخاص 
+    ON الطلاب.[معرّف_الشخص] = الأشخاص.[معرّف_الشخص]
+LEFT JOIN 
+    الصفوف
+    ON الطلاب.[معرّف_الصف] = الصفوف.[معرّف_الصف]
+";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            connection.Open();
+
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    dt.Load(reader);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorHandler.HandleException(ex, nameof(GetAllالطلاب), "No parameters for this method.");
+                }
+
+                return dt;
+        }
+       
+
+        public static int? AddNewالطلاب(int? معرّف_الشخص, int? معرّف_الصف, DateTime? تاريخ_الالتحاق)
     {
         int? معرّف_الطالب = null;
 
@@ -105,7 +175,8 @@ namespace SchoolsDb_DataLayer
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص);
-                    command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@معرّف_الصف", معرّف_الصف);
+                   command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
 
 
                     SqlParameter outputIdParam = new SqlParameter("@NewID", SqlDbType.Int)
@@ -135,7 +206,7 @@ namespace SchoolsDb_DataLayer
         return معرّف_الطالب;
     }
 
-        public static bool UpdateالطلابByID(int? معرّف_الطالب, int? معرّف_الشخص, DateTime? تاريخ_الالتحاق)
+        public static bool UpdateالطلابByID(int? معرّف_الطالب, int? معرّف_الشخص,int? معرّف_الصف, DateTime? تاريخ_الالتحاق)
 {
     int rowsAffected = 0;
 
@@ -152,7 +223,8 @@ namespace SchoolsDb_DataLayer
                 // Create the parameters for the stored procedure
                     command.Parameters.AddWithValue("@معرّف_الطالب", معرّف_الطالب);
                     command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص);
-                    command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@معرّف_الصف", معرّف_الصف);
+                   command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
 
 
                 // Open the connection and execute the update

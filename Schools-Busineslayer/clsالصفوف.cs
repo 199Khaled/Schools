@@ -14,23 +14,21 @@ namespace SchoolsDb_BusinessLayer
 
         public int? معرّف_الصف { get; set; }
         public string اسم_الصف { get; set; }
-        public string المستوى_الصفّي { get; set; }
+
 
 
         public clsالصفوف()
         {
             this.معرّف_الصف = null;
             this.اسم_الصف = "";
-            this.المستوى_الصفّي = "";
             Mode = enMode.AddNew;
         }
 
 
         private clsالصفوف(
-int? معرّف_الصف, string اسم_الصف, string المستوى_الصفّي)        {
+int? معرّف_الصف, string اسم_الصف)        {
             this.معرّف_الصف = معرّف_الصف;
             this.اسم_الصف = اسم_الصف;
-            this.المستوى_الصفّي = المستوى_الصفّي;
             Mode = enMode.Update;
         }
 
@@ -38,15 +36,15 @@ int? معرّف_الصف, string اسم_الصف, string المستوى_الصف
        private bool _AddNewالصفوف()
        {
         this.معرّف_الصف = clsالصفوفData.AddNewالصفوف(
-this.اسم_الصف, this.المستوى_الصفّي);
+this.اسم_الصف);
         return (this.معرّف_الصف != null);
        }
 
 
        public static bool AddNewالصفوف(
-ref int? معرّف_الصف, string اسم_الصف, string المستوى_الصفّي)        {
+ref int? معرّف_الصف, string اسم_الصف)        {
         معرّف_الصف = clsالصفوفData.AddNewالصفوف(
-اسم_الصف, المستوى_الصفّي);
+اسم_الصف);
 
         return (معرّف_الصف != null);
 
@@ -55,15 +53,15 @@ ref int? معرّف_الصف, string اسم_الصف, string المستوى_ال
 
        private bool _Updateالصفوف()
        {
-        return clsالصفوفData.UpdateالصفوفByID(
-this.معرّف_الصف, this.اسم_الصف, this.المستوى_الصفّي);
+            return clsالصفوفData.UpdateالصفوفByID(
+    this.معرّف_الصف, this.اسم_الصف);
        }
 
 
        public static bool UpdateالصفوفByID(
-int? معرّف_الصف, string اسم_الصف, string المستوى_الصفّي)        {
+int? معرّف_الصف, string اسم_الصف)        {
         return clsالصفوفData.UpdateالصفوفByID(
-معرّف_الصف, اسم_الصف, المستوى_الصفّي);
+معرّف_الصف, اسم_الصف);
 
         }
 
@@ -76,13 +74,13 @@ int? معرّف_الصف, string اسم_الصف, string المستوى_الصف
                 return null;
             }
             string اسم_الصف = "";
-            string المستوى_الصفّي = "";
+        
             bool IsFound = clsالصفوفData.GetالصفوفInfoByID(معرّف_الصف,
- ref اسم_الصف,  ref المستوى_الصفّي);
+ ref اسم_الصف);
 
            if (IsFound)
                return new clsالصفوف(
-معرّف_الصف, اسم_الصف, المستوى_الصفّي);
+معرّف_الصف, اسم_الصف);
             else
                 return null;
             }
@@ -96,13 +94,13 @@ int? معرّف_الصف, string اسم_الصف, string المستوى_الصف
                 return null;
             }
             int? معرّف_الصف = 0;
-            string المستوى_الصفّي = "";
+  
             bool IsFound = clsالصفوفData.GetالصفوفInfoByClassRoomName(ref معرّف_الصف,
-                 اسم_الصف, ref المستوى_الصفّي);
+                 اسم_الصف);
 
             if (IsFound)
                 return new clsالصفوف(
-                 معرّف_الصف, اسم_الصف, المستوى_الصفّي);
+                 معرّف_الصف, اسم_الصف);
             else
                 return null;
         }

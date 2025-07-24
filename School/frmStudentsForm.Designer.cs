@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCity = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpDateOfBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -58,6 +58,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtFirstname = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtFathername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtMothername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbClassname = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +73,7 @@
             // 
             // cbCity
             // 
+            this.cbCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCity.BackColor = System.Drawing.Color.Transparent;
             this.cbCity.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -78,7 +85,7 @@
             this.cbCity.HoverState.Parent = this.cbCity;
             this.cbCity.ItemHeight = 30;
             this.cbCity.ItemsAppearance.Parent = this.cbCity;
-            this.cbCity.Location = new System.Drawing.Point(807, 127);
+            this.cbCity.Location = new System.Drawing.Point(807, 182);
             this.cbCity.Name = "cbCity";
             this.cbCity.ShadowDecoration.Parent = this.cbCity;
             this.cbCity.Size = new System.Drawing.Size(225, 36);
@@ -87,12 +94,13 @@
             // 
             // dtpDateOfBirth
             // 
+            this.dtpDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDateOfBirth.CheckedState.Parent = this.dtpDateOfBirth;
             this.dtpDateOfBirth.FillColor = System.Drawing.Color.White;
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateOfBirth.HoverState.Parent = this.dtpDateOfBirth;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(456, 76);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(456, 131);
             this.dtpDateOfBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateOfBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
@@ -104,6 +112,7 @@
             // 
             // cbGender
             // 
+            this.cbGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGender.BackColor = System.Drawing.Color.Transparent;
             this.cbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -115,18 +124,19 @@
             this.cbGender.HoverState.Parent = this.cbGender;
             this.cbGender.ItemHeight = 30;
             this.cbGender.Items.AddRange(new object[] {
-            "M",
-            "F"});
+            "ذكر",
+            "أنثى"});
             this.cbGender.ItemsAppearance.Parent = this.cbGender;
-            this.cbGender.Location = new System.Drawing.Point(935, 76);
+            this.cbGender.Location = new System.Drawing.Point(858, 134);
             this.cbGender.Name = "cbGender";
             this.cbGender.ShadowDecoration.Parent = this.cbGender;
-            this.cbGender.Size = new System.Drawing.Size(97, 36);
+            this.cbGender.Size = new System.Drawing.Size(174, 36);
             this.cbGender.TabIndex = 2;
             this.cbGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.DefaultText = "";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -140,18 +150,19 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(702, 171);
+            this.txtEmail.Location = new System.Drawing.Point(764, 226);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
-            this.txtEmail.Size = new System.Drawing.Size(330, 38);
+            this.txtEmail.Size = new System.Drawing.Size(268, 38);
             this.txtEmail.TabIndex = 6;
             // 
             // txtPhone
             // 
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.DefaultText = "";
             this.txtPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -165,7 +176,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.HoverState.Parent = this.txtPhone;
-            this.txtPhone.Location = new System.Drawing.Point(456, 127);
+            this.txtPhone.Location = new System.Drawing.Point(456, 226);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
@@ -177,6 +188,7 @@
             // 
             // txtLastname
             // 
+            this.txtLastname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastname.DefaultText = "";
             this.txtLastname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -190,7 +202,7 @@
             this.txtLastname.ForeColor = System.Drawing.Color.Black;
             this.txtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLastname.HoverState.Parent = this.txtLastname;
-            this.txtLastname.Location = new System.Drawing.Point(456, 30);
+            this.txtLastname.Location = new System.Drawing.Point(456, 85);
             this.txtLastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.PasswordChar = '\0';
@@ -202,9 +214,10 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1050, 177);
+            this.label7.Location = new System.Drawing.Point(1050, 233);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 20);
             this.label7.TabIndex = 25;
@@ -212,9 +225,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(691, 131);
+            this.label6.Location = new System.Drawing.Point(687, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 20);
             this.label6.TabIndex = 24;
@@ -222,9 +236,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1050, 131);
+            this.label5.Location = new System.Drawing.Point(1050, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 23;
@@ -232,9 +247,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1050, 85);
+            this.label4.Location = new System.Drawing.Point(1050, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 22;
@@ -242,9 +258,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(687, 85);
+            this.label3.Location = new System.Drawing.Point(687, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 21;
@@ -252,9 +269,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(688, 39);
+            this.label2.Location = new System.Drawing.Point(688, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 20;
@@ -262,6 +280,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1050, 39);
@@ -274,29 +293,32 @@
             // 
             this.dgvStudents.AllowUserToAddRows = false;
             this.dgvStudents.AllowUserToDeleteRows = false;
+            this.dgvStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvStudents.EnableHeadersVisualStyles = false;
             this.dgvStudents.Location = new System.Drawing.Point(18, 489);
             this.dgvStudents.MultiSelect = false;
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.ReadOnly = true;
+            this.dgvStudents.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvStudents.RowTemplate.Height = 25;
             this.dgvStudents.Size = new System.Drawing.Size(1212, 244);
             this.dgvStudents.TabIndex = 33;
@@ -304,10 +326,11 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(666, 266);
+            this.btnSave.Location = new System.Drawing.Point(664, 277);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 46);
             this.btnSave.TabIndex = 7;
@@ -317,10 +340,11 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(793, 266);
+            this.btnCancel.Location = new System.Drawing.Point(791, 277);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 46);
             this.btnCancel.TabIndex = 8;
@@ -334,10 +358,11 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(920, 266);
+            this.btnDelete.Location = new System.Drawing.Point(918, 277);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 46);
             this.btnDelete.TabIndex = 9;
@@ -347,6 +372,7 @@
             // 
             // cbFilterby
             // 
+            this.cbFilterby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFilterby.BackColor = System.Drawing.Color.Transparent;
             this.cbFilterby.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbFilterby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -358,9 +384,8 @@
             this.cbFilterby.HoverState.Parent = this.cbFilterby;
             this.cbFilterby.ItemHeight = 30;
             this.cbFilterby.Items.AddRange(new object[] {
-            "StudentID",
-            "Firstname",
-            "Lastname"});
+            "معرّف_الطالب",
+            "الاسم_الكامل"});
             this.cbFilterby.ItemsAppearance.Parent = this.cbFilterby;
             this.cbFilterby.Location = new System.Drawing.Point(944, 448);
             this.cbFilterby.Name = "cbFilterby";
@@ -371,6 +396,7 @@
             // 
             // txtFilterValue
             // 
+            this.txtFilterValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilterValue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFilterValue.DefaultText = "";
             this.txtFilterValue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -389,6 +415,7 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.PasswordChar = '\0';
             this.txtFilterValue.PlaceholderText = "";
+            this.txtFilterValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtFilterValue.SelectedText = "";
             this.txtFilterValue.ShadowDecoration.Parent = this.txtFilterValue;
             this.txtFilterValue.Size = new System.Drawing.Size(522, 38);
@@ -397,6 +424,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(1141, 459);
@@ -417,6 +445,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
@@ -431,6 +460,12 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cbClassname);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtMothername);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtFathername);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtFirstname);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -460,6 +495,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox1.Image = global::Schools.Properties.Resources.Student;
             this.pictureBox1.Location = new System.Drawing.Point(16, 21);
             this.pictureBox1.Name = "pictureBox1";
@@ -470,6 +506,7 @@
             // 
             // txtFirstname
             // 
+            this.txtFirstname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFirstname.DefaultText = "";
             this.txtFirstname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -495,11 +532,125 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Maroon;
             this.panel1.Location = new System.Drawing.Point(0, 415);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1257, 22);
             this.panel1.TabIndex = 41;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(689, 39);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(70, 20);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "اسم_الأب*:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtFathername
+            // 
+            this.txtFathername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFathername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFathername.DefaultText = "";
+            this.txtFathername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFathername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFathername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFathername.DisabledState.Parent = this.txtFathername;
+            this.txtFathername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFathername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFathername.FocusedState.Parent = this.txtFathername;
+            this.txtFathername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFathername.ForeColor = System.Drawing.Color.Black;
+            this.txtFathername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFathername.HoverState.Parent = this.txtFathername;
+            this.txtFathername.Location = new System.Drawing.Point(457, 31);
+            this.txtFathername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFathername.Name = "txtFathername";
+            this.txtFathername.PasswordChar = '\0';
+            this.txtFathername.PlaceholderText = "";
+            this.txtFathername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFathername.SelectedText = "";
+            this.txtFathername.ShadowDecoration.Parent = this.txtFathername;
+            this.txtFathername.Size = new System.Drawing.Size(225, 38);
+            this.txtFathername.TabIndex = 45;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1049, 94);
+            this.label11.Name = "label11";
+            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label11.Size = new System.Drawing.Size(64, 20);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "اسم_الأم*:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMothername
+            // 
+            this.txtMothername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMothername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMothername.DefaultText = "";
+            this.txtMothername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMothername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMothername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMothername.DisabledState.Parent = this.txtMothername;
+            this.txtMothername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMothername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMothername.FocusedState.Parent = this.txtMothername;
+            this.txtMothername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMothername.ForeColor = System.Drawing.Color.Black;
+            this.txtMothername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMothername.HoverState.Parent = this.txtMothername;
+            this.txtMothername.Location = new System.Drawing.Point(807, 85);
+            this.txtMothername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMothername.Name = "txtMothername";
+            this.txtMothername.PasswordChar = '\0';
+            this.txtMothername.PlaceholderText = "";
+            this.txtMothername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMothername.SelectedText = "";
+            this.txtMothername.ShadowDecoration.Parent = this.txtMothername;
+            this.txtMothername.Size = new System.Drawing.Size(225, 38);
+            this.txtMothername.TabIndex = 47;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(689, 190);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 20);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "الصف:";
+            // 
+            // cbClassname
+            // 
+            this.cbClassname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbClassname.BackColor = System.Drawing.Color.Transparent;
+            this.cbClassname.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbClassname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClassname.FocusedColor = System.Drawing.Color.Empty;
+            this.cbClassname.FocusedState.Parent = this.cbClassname;
+            this.cbClassname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClassname.ForeColor = System.Drawing.Color.Black;
+            this.cbClassname.FormattingEnabled = true;
+            this.cbClassname.HoverState.Parent = this.cbClassname;
+            this.cbClassname.ItemHeight = 30;
+            this.cbClassname.ItemsAppearance.Parent = this.cbClassname;
+            this.cbClassname.Location = new System.Drawing.Point(456, 182);
+            this.cbClassname.Name = "cbClassname";
+            this.cbClassname.ShadowDecoration.Parent = this.cbClassname;
+            this.cbClassname.Size = new System.Drawing.Size(225, 36);
+            this.cbClassname.TabIndex = 51;
+            this.cbClassname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmStudentsForm
             // 
@@ -558,5 +709,11 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox txtFirstname;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox txtFathername;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2TextBox txtMothername;
+        private Guna.UI2.WinForms.Guna2ComboBox cbClassname;
+        private System.Windows.Forms.Label label12;
     }
 }
