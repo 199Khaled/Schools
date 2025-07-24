@@ -6,15 +6,15 @@
       "AbsoluteMoniker": "D:0:0:{1BF73594-A2DB-4A9B-8833-956618F199B6}|..\\Schools-Busineslayer\\Schools-Busineslayer.csproj|c:\\users\\khaled\\desktop\\schools\\schools-busineslayer\\cls\u0645\u0648\u0627\u062F_\u0627\u0644\u0645\u0639\u0644\u0645.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\khaled\\desktop\\schools\\school\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmstudentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\khaled\\desktop\\schools\\school\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\khaled\\desktop\\schools\\school\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmteacherform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -25,7 +25,7 @@
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|c:\\users\\khaled\\desktop\\schools\\school\\frmenrollmentsformcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmenrollmentsformcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8F9E7AE4-B7E4-4D2C-91FD-D410471FBFB4}|Schools.csproj|solutionrelative:frmenrollmentsformcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -48,8 +48,7 @@
               "RelativeToolTip": "frmTeacherForm.cs",
               "ViewState": "AQIAAAIBAAAAAAAAAAAIwBMBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T14:49:50.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T14:49:50.495Z"
             },
             {
               "$type": "Document",
@@ -61,8 +60,7 @@
               "RelativeToolTip": "..\\Datalayer\\cls\u0627\u0644\u0637\u0644\u0627\u0628.cs",
               "ViewState": "AQIAAGUAAAAAAAAAAAA9wHYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T14:45:44.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T14:45:44.057Z"
             },
             {
               "$type": "Document",
@@ -73,8 +71,7 @@
               "ToolTip": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmEnrollmentsFormcs.cs [Entwurf]",
               "RelativeToolTip": "frmEnrollmentsFormcs.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T14:33:09.4Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-07-23T14:33:09.4Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "ToolTip": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmTeacherForm.cs [Entwurf]",
               "RelativeToolTip": "frmTeacherForm.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T12:03:43.782Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-07-16T12:03:43.782Z"
             },
             {
               "$type": "Document",
@@ -97,8 +93,7 @@
               "ToolTip": "C:\\Users\\Khaled\\Desktop\\Schools\\School\\frmStudentsForm.cs [Entwurf]",
               "RelativeToolTip": "frmStudentsForm.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T12:03:29.508Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-07-16T12:03:29.508Z"
             },
             {
               "$type": "Document",
@@ -110,8 +105,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T22:38:43.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T22:38:43.739Z"
             },
             {
               "$type": "Document",
@@ -121,7 +115,7 @@
               "RelativeDocumentMoniker": "..\\Schools-Busineslayer\\cls\u0645\u0648\u0627\u062F_\u0627\u0644\u0645\u0639\u0644\u0645.cs",
               "ToolTip": "C:\\Users\\Khaled\\Desktop\\Schools\\Schools-Busineslayer\\cls\u0645\u0648\u0627\u062F_\u0627\u0644\u0645\u0639\u0644\u0645.cs",
               "RelativeToolTip": "..\\Schools-Busineslayer\\cls\u0645\u0648\u0627\u062F_\u0627\u0644\u0645\u0639\u0644\u0645.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAowDoAAAAHAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAwwDoAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-15T15:36:37.807Z",
               "EditorCaption": ""
