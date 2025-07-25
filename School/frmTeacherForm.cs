@@ -376,7 +376,7 @@ namespace Schools
                 return;
             }
 
-            if (warningMessage &&  clsالموظفون.Deleteالموظفون(emplyeeID))
+            if (warningMessage &&  clsالأشخاص.Deleteالأشخاص(teachers.معرّف_الشخص))
             {
                 _ResetDefaultValue();
                 _LoadAllStudentFromDatabase();

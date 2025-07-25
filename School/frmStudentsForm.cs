@@ -45,7 +45,6 @@ namespace Schools
 
             _LoadAllStudentFromDatabase();
             _FillComboBoxCity();
-            _FillClassnameWithDaten();
         }
         private void _ResetDefaultValue()
         {
@@ -59,7 +58,6 @@ namespace Schools
             txtEmail.Clear();
             txtPhone.Clear();
             cbCity.SelectedIndex = -1;
-            cbClassname.SelectedIndex = -1;
             dtpDateOfBirth.Value = DateTime.Now;
 
             txtFirstname.FillColor = Color.White;
@@ -73,8 +71,6 @@ namespace Schools
             cbGender.FillColor = Color.White;
             errorProvider1.SetError(cbGender, null);
 
-            cbClassname.FillColor = Color.White;
-            errorProvider1.SetError(cbClassname, null);
         }
 
         private bool _IsInputValid(Guna2TextBox textname, string message)
@@ -117,7 +113,6 @@ namespace Schools
 
             isValid &= _IsInputValidForComboBox(cbCity, "الرجاء اختيار المدينة!");
             isValid &= _IsInputValidForComboBox(cbGender, "الرجاء اختيار الجنس!");
-            isValid &= _IsInputValidForComboBox(cbClassname, "الرجاء اختيار اسم الصف!");
 
             return isValid;
         }
@@ -138,14 +133,10 @@ namespace Schools
             txtMothername.Text = _persons.اسم_الأم;
             txtLastname.Text = _persons.اسم_العائلة;
             dtpDateOfBirth.Value = _persons.تاريخ_الميلاد.Value;
-            cbGender.Text = _persons.الجنس;
-            cbCity.Text = _persons.المدينة;
+            cbGender.Text = _persons.الجنس.Trim();
+            cbCity.Text= _persons.المدينة.Trim();
             txtPhone.Text = _persons.الهاتف;
             txtEmail.Text = _persons.البريد_الإلكتروني;
-
-            _students = clsالطلاب.FindByمعرّف_الشخص(_persons.معرّف_الشخص);
-            if (_students != null)
-                cbClassname.Text = clsالصفوف.FindByمعرّف_الصف(_students.معرّف_الصف).اسم_الصف;
         }
         private void _FillPersonData()
         {
@@ -164,14 +155,6 @@ namespace Schools
             _persons.المدينة = cbCity.Text;
             _persons.الهاتف = txtPhone.Text;
             _persons.البريد_الإلكتروني = txtEmail.Text;
-
-
-            if (_Mode == enMode.AddNew)
-            {
-                _students = new clsالطلاب();
-                _students.تاريخ_الالتحاق = DateTime.Now;
-            }
-            _students.معرّف_الصف = clsالصفوف.FindByاسم_الصف(cbClassname.Text).معرّف_الصف;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -248,19 +231,6 @@ namespace Schools
             }
         }
 
-        private void _FillClassnameWithDaten()
-        {
-            DataTable classes = clsالصفوف.GetAllالصفوف();
-
-            if(classes != null)
-            {
-                foreach(DataRow row in classes.Rows)
-                {
-                    cbClassname.Items.Add(row["اسم_الصف"]);
-                }
-            }
-            cbClassname.SelectedIndex = -1;
-        } 
 
         private void dgvStudents_DoubleClick(object sender, EventArgs e)
         {
@@ -287,7 +257,7 @@ namespace Schools
             if (!warningMessage)
                 return;
 
-            int studentID = (int)dgvStudents.CurrentRow.Cells[0].Value;
+            int? studentID = (int)dgvStudents.CurrentRow.Cells[0].Value;
             clsالطلاب students = clsالطلاب.FindByمعرّف_الطالب(studentID);
             if(students == null)
             {
@@ -295,9 +265,8 @@ namespace Schools
                 return;
             }
 
-            if (warningMessage && clsالطلاب.Deleteالطلاب(studentID))
+            if (warningMessage && clsالأشخاص.Deleteالأشخاص(students.معرّف_الشخص))
             {
-                MessageBox.Show("تم حذف الطالب بنجاح!", "تم الحذف بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ResetDefaultValue();
                 _LoadAllStudentFromDatabase();
             }
@@ -358,6 +327,19 @@ namespace Schools
                 return true;
             else
                 return false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegisterStudent_Click(object sender, EventArgs e)
+        {
+            using(frmEnrollmentsFormcs frm = new frmEnrollmentsFormcs())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

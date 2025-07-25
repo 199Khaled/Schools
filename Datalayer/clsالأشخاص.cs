@@ -194,7 +194,7 @@ namespace SchoolsDb_DataLayer
     return (rowsAffected > 0);
 }
 
-        public static bool Deleteالأشخاص(int معرّف_الشخص)
+        public static bool Deleteالأشخاص(int? معرّف_الشخص)
 {
     int rowsAffected = 0;
 

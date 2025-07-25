@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCity = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpDateOfBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -55,15 +55,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtMothername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtFathername = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtFirstname = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtFathername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtMothername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbClassname = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnRegisterStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -89,7 +88,7 @@
             this.cbCity.Name = "cbCity";
             this.cbCity.ShadowDecoration.Parent = this.cbCity;
             this.cbCity.Size = new System.Drawing.Size(225, 36);
-            this.cbCity.TabIndex = 4;
+            this.cbCity.TabIndex = 6;
             this.cbCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpDateOfBirth
@@ -106,7 +105,7 @@
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.ShadowDecoration.Parent = this.dtpDateOfBirth;
             this.dtpDateOfBirth.Size = new System.Drawing.Size(225, 36);
-            this.dtpDateOfBirth.TabIndex = 3;
+            this.dtpDateOfBirth.TabIndex = 5;
             this.dtpDateOfBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dtpDateOfBirth.Value = new System.DateTime(2025, 3, 13, 11, 27, 16, 202);
             // 
@@ -131,7 +130,7 @@
             this.cbGender.Name = "cbGender";
             this.cbGender.ShadowDecoration.Parent = this.cbGender;
             this.cbGender.Size = new System.Drawing.Size(174, 36);
-            this.cbGender.TabIndex = 2;
+            this.cbGender.TabIndex = 4;
             this.cbGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtEmail
@@ -150,15 +149,15 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(764, 226);
+            this.txtEmail.Location = new System.Drawing.Point(687, 226);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
-            this.txtEmail.Size = new System.Drawing.Size(268, 38);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.Size = new System.Drawing.Size(345, 38);
+            this.txtEmail.TabIndex = 8;
             // 
             // txtPhone
             // 
@@ -176,7 +175,7 @@
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.HoverState.Parent = this.txtPhone;
-            this.txtPhone.Location = new System.Drawing.Point(456, 226);
+            this.txtPhone.Location = new System.Drawing.Point(457, 184);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
@@ -184,7 +183,7 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.ShadowDecoration.Parent = this.txtPhone;
             this.txtPhone.Size = new System.Drawing.Size(226, 38);
-            this.txtPhone.TabIndex = 5;
+            this.txtPhone.TabIndex = 7;
             // 
             // txtLastname
             // 
@@ -210,7 +209,7 @@
             this.txtLastname.SelectedText = "";
             this.txtLastname.ShadowDecoration.Parent = this.txtLastname;
             this.txtLastname.Size = new System.Drawing.Size(225, 38);
-            this.txtLastname.TabIndex = 1;
+            this.txtLastname.TabIndex = 3;
             // 
             // label7
             // 
@@ -228,7 +227,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(687, 233);
+            this.label6.Location = new System.Drawing.Point(690, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 20);
             this.label6.TabIndex = 24;
@@ -296,23 +295,23 @@
             this.dgvStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvStudents.EnableHeadersVisualStyles = false;
             this.dgvStudents.Location = new System.Drawing.Point(18, 489);
             this.dgvStudents.MultiSelect = false;
@@ -333,7 +332,7 @@
             this.btnSave.Location = new System.Drawing.Point(664, 277);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 46);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "حفظ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnAdd_Click);
@@ -347,7 +346,7 @@
             this.btnCancel.Location = new System.Drawing.Point(791, 277);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 46);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "إلغاء";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -365,7 +364,7 @@
             this.btnDelete.Location = new System.Drawing.Point(918, 277);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 46);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -391,7 +390,7 @@
             this.cbFilterby.Name = "cbFilterby";
             this.cbFilterby.ShadowDecoration.Parent = this.cbFilterby;
             this.cbFilterby.Size = new System.Drawing.Size(191, 36);
-            this.cbFilterby.TabIndex = 10;
+            this.cbFilterby.TabIndex = 13;
             this.cbFilterby.SelectedIndexChanged += new System.EventHandler(this.cbFilterby_SelectedIndexChanged);
             // 
             // txtFilterValue
@@ -419,7 +418,7 @@
             this.txtFilterValue.SelectedText = "";
             this.txtFilterValue.ShadowDecoration.Parent = this.txtFilterValue;
             this.txtFilterValue.Size = new System.Drawing.Size(522, 38);
-            this.txtFilterValue.TabIndex = 11;
+            this.txtFilterValue.TabIndex = 14;
             this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
             // label8
@@ -460,8 +459,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cbClassname);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.btnRegisterStudent);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtMothername);
             this.groupBox1.Controls.Add(this.label10);
@@ -492,6 +490,87 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1049, 94);
+            this.label11.Name = "label11";
+            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label11.Size = new System.Drawing.Size(64, 20);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "اسم_الأم*:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMothername
+            // 
+            this.txtMothername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMothername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMothername.DefaultText = "";
+            this.txtMothername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMothername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMothername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMothername.DisabledState.Parent = this.txtMothername;
+            this.txtMothername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMothername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMothername.FocusedState.Parent = this.txtMothername;
+            this.txtMothername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMothername.ForeColor = System.Drawing.Color.Black;
+            this.txtMothername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMothername.HoverState.Parent = this.txtMothername;
+            this.txtMothername.Location = new System.Drawing.Point(807, 85);
+            this.txtMothername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMothername.Name = "txtMothername";
+            this.txtMothername.PasswordChar = '\0';
+            this.txtMothername.PlaceholderText = "";
+            this.txtMothername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMothername.SelectedText = "";
+            this.txtMothername.ShadowDecoration.Parent = this.txtMothername;
+            this.txtMothername.Size = new System.Drawing.Size(225, 38);
+            this.txtMothername.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(689, 39);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(70, 20);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "اسم_الأب*:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtFathername
+            // 
+            this.txtFathername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFathername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFathername.DefaultText = "";
+            this.txtFathername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFathername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFathername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFathername.DisabledState.Parent = this.txtFathername;
+            this.txtFathername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFathername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFathername.FocusedState.Parent = this.txtFathername;
+            this.txtFathername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFathername.ForeColor = System.Drawing.Color.Black;
+            this.txtFathername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFathername.HoverState.Parent = this.txtFathername;
+            this.txtFathername.Location = new System.Drawing.Point(457, 31);
+            this.txtFathername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFathername.Name = "txtFathername";
+            this.txtFathername.PasswordChar = '\0';
+            this.txtFathername.PlaceholderText = "";
+            this.txtFathername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFathername.SelectedText = "";
+            this.txtFathername.ShadowDecoration.Parent = this.txtFathername;
+            this.txtFathername.Size = new System.Drawing.Size(225, 38);
+            this.txtFathername.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -540,117 +619,19 @@
             this.panel1.Size = new System.Drawing.Size(1257, 22);
             this.panel1.TabIndex = 41;
             // 
-            // label10
+            // btnRegisterStudent
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(689, 39);
-            this.label10.Name = "label10";
-            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label10.Size = new System.Drawing.Size(70, 20);
-            this.label10.TabIndex = 46;
-            this.label10.Text = "اسم_الأب*:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtFathername
-            // 
-            this.txtFathername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFathername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFathername.DefaultText = "";
-            this.txtFathername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFathername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFathername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFathername.DisabledState.Parent = this.txtFathername;
-            this.txtFathername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFathername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFathername.FocusedState.Parent = this.txtFathername;
-            this.txtFathername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFathername.ForeColor = System.Drawing.Color.Black;
-            this.txtFathername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFathername.HoverState.Parent = this.txtFathername;
-            this.txtFathername.Location = new System.Drawing.Point(457, 31);
-            this.txtFathername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtFathername.Name = "txtFathername";
-            this.txtFathername.PasswordChar = '\0';
-            this.txtFathername.PlaceholderText = "";
-            this.txtFathername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtFathername.SelectedText = "";
-            this.txtFathername.ShadowDecoration.Parent = this.txtFathername;
-            this.txtFathername.Size = new System.Drawing.Size(225, 38);
-            this.txtFathername.TabIndex = 45;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1049, 94);
-            this.label11.Name = "label11";
-            this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label11.Size = new System.Drawing.Size(64, 20);
-            this.label11.TabIndex = 48;
-            this.label11.Text = "اسم_الأم*:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtMothername
-            // 
-            this.txtMothername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMothername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMothername.DefaultText = "";
-            this.txtMothername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMothername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMothername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMothername.DisabledState.Parent = this.txtMothername;
-            this.txtMothername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMothername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMothername.FocusedState.Parent = this.txtMothername;
-            this.txtMothername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMothername.ForeColor = System.Drawing.Color.Black;
-            this.txtMothername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMothername.HoverState.Parent = this.txtMothername;
-            this.txtMothername.Location = new System.Drawing.Point(807, 85);
-            this.txtMothername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMothername.Name = "txtMothername";
-            this.txtMothername.PasswordChar = '\0';
-            this.txtMothername.PlaceholderText = "";
-            this.txtMothername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtMothername.SelectedText = "";
-            this.txtMothername.ShadowDecoration.Parent = this.txtMothername;
-            this.txtMothername.Size = new System.Drawing.Size(225, 38);
-            this.txtMothername.TabIndex = 47;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(689, 190);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 20);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "الصف:";
-            // 
-            // cbClassname
-            // 
-            this.cbClassname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbClassname.BackColor = System.Drawing.Color.Transparent;
-            this.cbClassname.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbClassname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbClassname.FocusedColor = System.Drawing.Color.Empty;
-            this.cbClassname.FocusedState.Parent = this.cbClassname;
-            this.cbClassname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbClassname.ForeColor = System.Drawing.Color.Black;
-            this.cbClassname.FormattingEnabled = true;
-            this.cbClassname.HoverState.Parent = this.cbClassname;
-            this.cbClassname.ItemHeight = 30;
-            this.cbClassname.ItemsAppearance.Parent = this.cbClassname;
-            this.cbClassname.Location = new System.Drawing.Point(456, 182);
-            this.cbClassname.Name = "cbClassname";
-            this.cbClassname.ShadowDecoration.Parent = this.cbClassname;
-            this.cbClassname.Size = new System.Drawing.Size(225, 36);
-            this.cbClassname.TabIndex = 51;
-            this.cbClassname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnRegisterStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegisterStudent.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnRegisterStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegisterStudent.ForeColor = System.Drawing.Color.Black;
+            this.btnRegisterStudent.Location = new System.Drawing.Point(456, 277);
+            this.btnRegisterStudent.Name = "btnRegisterStudent";
+            this.btnRegisterStudent.Size = new System.Drawing.Size(163, 46);
+            this.btnRegisterStudent.TabIndex = 12;
+            this.btnRegisterStudent.Text = "تسجيل طالب جديد";
+            this.btnRegisterStudent.UseVisualStyleBackColor = false;
+            this.btnRegisterStudent.Click += new System.EventHandler(this.btnRegisterStudent_Click);
             // 
             // frmStudentsForm
             // 
@@ -713,7 +694,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtFathername;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2TextBox txtMothername;
-        private Guna.UI2.WinForms.Guna2ComboBox cbClassname;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnRegisterStudent;
     }
 }

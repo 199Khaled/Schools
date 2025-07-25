@@ -13,7 +13,7 @@ namespace SchoolsDb_DataLayer
     {
         //#nullable enable
 
-        public static bool GetالطلابInfoByID(int? معرّف_الطالب , ref int? معرّف_الشخص, ref int? معرّف_الصف, ref DateTime? تاريخ_الالتحاق)
+        public static bool GetالطلابInfoByID(int? معرّف_الطالب , ref int? معرّف_الشخص)
 {
     bool isFound = false;
 
@@ -39,8 +39,7 @@ namespace SchoolsDb_DataLayer
                         isFound = true;
 
                                 معرّف_الشخص = (int)reader["معرّف_الشخص"];
-                                تاريخ_الالتحاق = reader["تاريخ_الالتحاق"] != DBNull.Value ? (DateTime?)reader["تاريخ_الالتحاق"] : null;
-
+                              
                     }
                 }
             }
@@ -56,7 +55,7 @@ namespace SchoolsDb_DataLayer
 }
 
 
-        public static bool GetالطلابInfoByPersonID(ref int? معرّف_الطالب, int? معرّف_الشخص, ref int? معرّف_الصف, ref DateTime? تاريخ_الالتحاق)
+        public static bool GetالطلابInfoByPersonID(ref int? معرّف_الطالب, int? معرّف_الشخص)
         {
             bool isFound = false;
 
@@ -81,8 +80,8 @@ namespace SchoolsDb_DataLayer
                                 // The record was found
                                 isFound = true;
 
-                                معرّف_الشخص = (int)reader["معرّف_الشخص"];
-                                تاريخ_الالتحاق = reader["تاريخ_الالتحاق"] != DBNull.Value ? (DateTime?)reader["تاريخ_الالتحاق"] : null;
+                                معرّف_الطالب = (int)reader["معرّف_الطالب"];
+                             
 
                             }
                         }
@@ -92,7 +91,7 @@ namespace SchoolsDb_DataLayer
             catch (Exception ex)
             {
                 // Handle all exceptions in a general way
-                ErrorHandler.HandleException(ex, nameof(GetالطلابInfoByID), $"Parameter: معرّف_الطالب = " + معرّف_الطالب);
+                ErrorHandler.HandleException(ex, nameof(GetالطلابInfoByID), $"Parameter: معرّف_الشخص = " + معرّف_الطالب);
             }
 
             return isFound;
@@ -122,19 +121,14 @@ SELECT
     الأشخاص.[الجنس]                 AS [الجنس],
     الأشخاص.[المدينة]               AS [المدينة],
     الأشخاص.[الهاتف]               AS [الهاتف],
-    الأشخاص.[البريد_الإلكتروني]     AS [البريد الإلكتروني],
+    الأشخاص.[البريد_الإلكتروني]     AS [البريد الإلكتروني]
 
-    الصفوف.[اسم_الصف]               AS [اسم الصف],
-    الطلاب.[تاريخ_الالتحاق]          AS [تاريخ الالتحاق]
 
 FROM 
     الطلاب
 INNER JOIN 
     الأشخاص 
     ON الطلاب.[معرّف_الشخص] = الأشخاص.[معرّف_الشخص]
-LEFT JOIN 
-    الصفوف
-    ON الطلاب.[معرّف_الصف] = الصفوف.[معرّف_الصف]
 ";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
@@ -160,7 +154,7 @@ LEFT JOIN
         }
        
 
-        public static int? AddNewالطلاب(int? معرّف_الشخص, int? معرّف_الصف, DateTime? تاريخ_الالتحاق)
+        public static int? AddNewالطلاب(int? معرّف_الشخص)
     {
         int? معرّف_الطالب = null;
 
@@ -175,10 +169,7 @@ LEFT JOIN
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص);
-                    command.Parameters.AddWithValue("@معرّف_الصف", معرّف_الصف);
-                   command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
-
-
+     
                     SqlParameter outputIdParam = new SqlParameter("@NewID", SqlDbType.Int)
                     {
                         Direction = ParameterDirection.Output
@@ -206,7 +197,7 @@ LEFT JOIN
         return معرّف_الطالب;
     }
 
-        public static bool UpdateالطلابByID(int? معرّف_الطالب, int? معرّف_الشخص,int? معرّف_الصف, DateTime? تاريخ_الالتحاق)
+        public static bool UpdateالطلابByID(int? معرّف_الطالب, int? معرّف_الشخص )
 {
     int rowsAffected = 0;
 
@@ -223,8 +214,6 @@ LEFT JOIN
                 // Create the parameters for the stored procedure
                     command.Parameters.AddWithValue("@معرّف_الطالب", معرّف_الطالب);
                     command.Parameters.AddWithValue("@معرّف_الشخص", معرّف_الشخص);
-                    command.Parameters.AddWithValue("@معرّف_الصف", معرّف_الصف);
-                   command.Parameters.AddWithValue("@تاريخ_الالتحاق", تاريخ_الالتحاق ?? (object)DBNull.Value);
 
 
                 // Open the connection and execute the update
@@ -242,7 +231,7 @@ LEFT JOIN
     return (rowsAffected > 0);
 }
 
-        public static bool Deleteالطلاب(int معرّف_الطالب)
+        public static bool Deleteالطلاب(int? معرّف_الطالب)
 {
     int rowsAffected = 0;
 

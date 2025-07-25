@@ -136,7 +136,7 @@ namespace SchoolsDb_BusinessLayer
             }
         }
 
-        public static bool Deleteالأشخاص(int معرّف_الشخص)
+        public static bool Deleteالأشخاص(int? معرّف_الشخص)
         {
             return clsالأشخاصData.Deleteالأشخاص(معرّف_الشخص);
         }
